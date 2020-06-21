@@ -26,6 +26,8 @@ class DetailedAlertViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         
+        super.viewWillAppear(animated)
+        
         titleLabel.text = alertTitle! ?? ""
         
         authorLabel.text = "Posted by " + alertAuthor! ?? ""
