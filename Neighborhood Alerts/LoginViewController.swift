@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: emailAddress, password: password) { [weak self] authResult, error in
             guard let strongSelf = self else { return }
             
-            if error != nil {
+            if error != nil || Auth.auth().currentUser == nil {
                 // error logging in
                 // show alert
                 let alertController = UIAlertController(

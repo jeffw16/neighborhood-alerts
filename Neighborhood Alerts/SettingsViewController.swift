@@ -12,11 +12,18 @@ import FirebaseAuth
 class SettingsViewController: UIViewController {
     
     let logoutSegueIdentifier: String = "LogoutSegueIdentifier"
-
+    
+    @IBOutlet weak var emailAddressLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // get user info
+        let user = Auth.auth().currentUser
+        // populate email address on settings VC
+        if let user = user {
+            let email = user.email
+            emailAddressLabel!.text = "Email address: \(email ?? "Unknown")"
+        }
     }
     
     @IBAction func logoutAction(_ sender: Any) {
