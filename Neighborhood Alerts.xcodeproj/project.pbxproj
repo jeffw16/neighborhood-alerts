@@ -9,25 +9,27 @@
 /* Begin PBXBuildFile section */
 		0011E573249EDEB00048860C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E572249EDEB00048860C /* AppDelegate.swift */; };
 		0011E575249EDEB00048860C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E574249EDEB00048860C /* SceneDelegate.swift */; };
-		0011E577249EDEB00048860C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E576249EDEB00048860C /* FirstViewController.swift */; };
-		0011E579249EDEB00048860C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E578249EDEB00048860C /* SecondViewController.swift */; };
+		0011E577249EDEB00048860C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E576249EDEB00048860C /* MapViewController.swift */; };
+		0011E579249EDEB00048860C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E578249EDEB00048860C /* ListViewController.swift */; };
 		0011E57C249EDEB00048860C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0011E57A249EDEB00048860C /* Main.storyboard */; };
 		0011E57F249EDEB00048860C /* Neighborhood_Alerts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0011E57D249EDEB00048860C /* Neighborhood_Alerts.xcdatamodeld */; };
 		0011E581249EDEB20048860C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0011E580249EDEB20048860C /* Assets.xcassets */; };
 		0011E584249EDEB20048860C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0011E582249EDEB20048860C /* LaunchScreen.storyboard */; };
+		0011E58C249EE94E0048860C /* AlertLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E58B249EE94E0048860C /* AlertLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0011E56F249EDEB00048860C /* Neighborhood Alerts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighborhood Alerts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0011E572249EDEB00048860C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0011E574249EDEB00048860C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0011E576249EDEB00048860C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		0011E578249EDEB00048860C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0011E576249EDEB00048860C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0011E578249EDEB00048860C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		0011E57B249EDEB00048860C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0011E57E249EDEB00048860C /* Neighborhood_Alerts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Neighborhood_Alerts.xcdatamodel; sourceTree = "<group>"; };
 		0011E580249EDEB20048860C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0011E583249EDEB20048860C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0011E585249EDEB20048860C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0011E58B249EE94E0048860C /* AlertLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +64,14 @@
 			children = (
 				0011E572249EDEB00048860C /* AppDelegate.swift */,
 				0011E574249EDEB00048860C /* SceneDelegate.swift */,
-				0011E576249EDEB00048860C /* FirstViewController.swift */,
-				0011E578249EDEB00048860C /* SecondViewController.swift */,
+				0011E576249EDEB00048860C /* MapViewController.swift */,
+				0011E578249EDEB00048860C /* ListViewController.swift */,
 				0011E57A249EDEB00048860C /* Main.storyboard */,
 				0011E580249EDEB20048860C /* Assets.xcassets */,
 				0011E582249EDEB20048860C /* LaunchScreen.storyboard */,
 				0011E585249EDEB20048860C /* Info.plist */,
 				0011E57D249EDEB00048860C /* Neighborhood_Alerts.xcdatamodeld */,
+				0011E58B249EE94E0048860C /* AlertLocation.swift */,
 			);
 			path = "Neighborhood Alerts";
 			sourceTree = "<group>";
@@ -144,9 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0011E579249EDEB00048860C /* SecondViewController.swift in Sources */,
-				0011E577249EDEB00048860C /* FirstViewController.swift in Sources */,
+				0011E579249EDEB00048860C /* ListViewController.swift in Sources */,
+				0011E577249EDEB00048860C /* MapViewController.swift in Sources */,
 				0011E57F249EDEB00048860C /* Neighborhood_Alerts.xcdatamodeld in Sources */,
+				0011E58C249EE94E0048860C /* AlertLocation.swift in Sources */,
 				0011E573249EDEB00048860C /* AppDelegate.swift in Sources */,
 				0011E575249EDEB00048860C /* SceneDelegate.swift in Sources */,
 			);
@@ -295,6 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3HCTJYS28;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3HCTJYS28;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
