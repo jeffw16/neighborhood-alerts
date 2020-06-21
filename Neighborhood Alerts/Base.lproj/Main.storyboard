@@ -289,8 +289,15 @@
                                     <action selector="logoutAction:" destination="RHN-SV-4ay" eventType="touchUpInside" id="Mlo-AA-Ffd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8K-Wu-4JF">
+                                <rect key="frame" x="20" y="161" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2n-jN-79R">
-                                <rect key="frame" x="20" y="164" width="374" height="21"/>
+                                <rect key="frame" x="20" y="190" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -303,6 +310,7 @@
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="40c-ud-7js"/>
                     <connections>
                         <outlet property="emailAddressLabel" destination="p2n-jN-79R" id="vjL-5I-eTD"/>
+                        <outlet property="fullNameLabel" destination="Y8K-Wu-4JF" id="k6P-PL-6py"/>
                         <segue destination="yi2-EP-Ehw" kind="presentation" identifier="LogoutSegueIdentifier" modalPresentationStyle="fullScreen" id="REM-Eb-MoW"/>
                     </connections>
                 </viewController>
