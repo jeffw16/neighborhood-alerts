@@ -31,7 +31,18 @@ class MapViewController: UIViewController {
                 longitudinalMeters: CLLocationDistance(exactly: zoomLevel)!)
             mapView.setRegion(mapView.regionThatFits(region), animated: true)
             
-            testFuncAddAlertAnnotationAtAmitsHouse()
+            Alert.loadAlerts() { alertsToAdd in
+                // adding alerts
+                for alert in alertsToAdd {
+                    let pointAnnotation = MKPointAnnotation()
+                    pointAnnotation.title = alert.displayName
+                    pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: alert.latitude, longitude: alert.longitude)
+                    
+                    let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
+                    
+                    self.mapView.addAnnotation(pinAnnotationView.annotation!)
+                }
+            }
         }
     }
     
