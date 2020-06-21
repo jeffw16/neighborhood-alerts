@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>151793263348-gv8ap3vkgniuon24utt7jo3i1ifojb2p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.151793263348-gv8ap3vkgniuon24utt7jo3i1ifojb2p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCXqk7qXxrhz1T3ZlqaXOu2nntSo3jW8S4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>151793263348</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mywikis.Neighborhood-Alerts</string>
+	<key>PROJECT_ID</key>
+	<string>neighborhood-alerts</string>
+	<key>STORAGE_BUCKET</key>
+	<string>neighborhood-alerts.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:151793263348:ios:f6428029eb5e22c321f4a1</string>
+	<key>DATABASE_URL</key>
+	<string>https://neighborhood-alerts.firebaseio.com</string>
+</dict>
+</plist>
