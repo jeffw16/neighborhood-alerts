@@ -14,14 +14,20 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    let resultRadius = 40233.6 // 25 miles converted to meters
+    
     let locationManager = CLLocationManager()
+    
+    var annotationsOnMap: [MKAnnotation] = []
     
     // amount of zoom, specified in meters
     let zoomLevel: Int = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         checkLocationServices()
         
         if locationManager.location != nil {
@@ -34,16 +40,29 @@ class MapViewController: UIViewController {
             Alert.loadAlerts() { alertsToAdd in
                 // adding alerts
                 for alert in alertsToAdd {
-                    let pointAnnotation = MKPointAnnotation()
-                    pointAnnotation.title = alert.displayName
-                    pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: alert.latitude, longitude: alert.longitude)
+                    let locationObject = CLLocation(latitude: alert.latitude, longitude: alert.longitude)
                     
-                    let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
-                    
-                    self.mapView.addAnnotation(pinAnnotationView.annotation!)
+                    if self.locationManager.location!.distance(from: locationObject) < self.resultRadius {
+                        let pointAnnotation = MKPointAnnotation()
+                        pointAnnotation.title = alert.displayName
+                        pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: alert.latitude, longitude: alert.longitude)
+                        
+                        let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: alert.id)
+                        
+                        self.annotationsOnMap.append(pinAnnotationView.annotation!)
+                    }
                 }
+                
+                self.mapView.addAnnotations(self.annotationsOnMap)
             }
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // let's remove all of the annotations from the map and
+        // refresh them to appear when the map view reappears
+        self.mapView.removeAnnotations(self.annotationsOnMap)
+        self.annotationsOnMap = []
     }
     
     func checkLocationServices() {
@@ -97,25 +116,5 @@ class MapViewController: UIViewController {
             fatalError()
         }
     }
-    
-    func testFuncAddAlertAnnotationAtAmitsHouse() {
-        let amitsAddress: String = "607 Smartts Ln NE, Leesburg, VA"
-        let localSearchRequest = MKLocalSearch.Request()
-        localSearchRequest.naturalLanguageQuery = amitsAddress
-        let localSearch = MKLocalSearch(request: localSearchRequest)
-        localSearch.start { (localSearchResponse, error) in
-            if localSearchResponse != nil {
-                let pointAnnotation = MKPointAnnotation()
-                pointAnnotation.title = "Bear Sighting"
-                pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
-                
-                let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
-                
-                self.mapView.addAnnotation(pinAnnotationView.annotation!)
-            }
-        }
-    }
-
-
 }
 

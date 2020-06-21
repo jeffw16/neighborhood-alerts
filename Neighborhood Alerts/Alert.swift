@@ -52,7 +52,7 @@ class Alert {
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                print(querySnapshot!.documents.count)
+//                print(querySnapshot!.documents.count)
                 for document in querySnapshot!.documents {
                     let id = document.documentID
                     let data = document.data()
@@ -65,7 +65,7 @@ class Alert {
                     let image = data["image"] as? UIImage
                     let location = data["location"] as! GeoPoint
                     
-                    print(id, displayName, description, authorName, authorEmail, category, created, created.seconds, location, location.latitude, location.longitude)
+//                    print(id, displayName, description, authorName, authorEmail, category, created, created.seconds, location, location.latitude, location.longitude)
                     
                     let alertToAdd = Alert(id: id,
                                            displayName: displayName,

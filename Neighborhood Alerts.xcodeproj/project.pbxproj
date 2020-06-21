@@ -402,14 +402,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z3HCTJYS28;
+				DEVELOPMENT_TEAM = 3CX5BHYB2J;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mywikis.Neighborhood-Alerts";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mywikis.NeighborhoodAlerts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,14 +422,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z3HCTJYS28;
+				DEVELOPMENT_TEAM = 3CX5BHYB2J;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mywikis.Neighborhood-Alerts";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mywikis.NeighborhoodAlerts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
