@@ -15,19 +15,20 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var alertsList: [Alert] = []
     
-    
-
-    let detailedAlertSegueIdentifier = "DetailedAlertSegueIdentifier"
-    
+    let detailedAlertSegueIdentifier: String = "DetailedAlertSegueIdentifier"
     let alertCellIdentifier: String = "AlertCellIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        var alert1 = Alert(id: "ae34f1134", displayName: "Fire on Fake Street", description: "Theres a fire bro what more do u want", category: "Fire", image: nil, latitude: CLLocationDegrees(39.127112), longitude: CLLocationDegrees(-77.533134), author: "Jeffrey Wang")
-        
-        alertsList.append(alert1)
+//        var alert1 = Alert(id: "ae34f1134", displayName: "Fire on Fake Street", description: "Theres a fire bro what more do u want", category: "Fire", image: nil, latitude: CLLocationDegrees(39.127112), longitude: CLLocationDegrees(-77.533134), author: "Jeffrey Wang")
+        Alert.loadAlerts() { alertsToAdd in
+            // adding alerts
+            self.alertsList.append(contentsOf: alertsToAdd)
+            // refresh table view to show new data
+            self.tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,7 +64,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             nextVC.alertImage = alertsList[alertIndex].image
             
-            nextVC.alertAuthor = alertsList[alertIndex].author
+            nextVC.alertAuthorName = alertsList[alertIndex].authorName
             
             
         }

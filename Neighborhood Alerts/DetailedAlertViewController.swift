@@ -13,7 +13,7 @@ class DetailedAlertViewController: UIViewController {
     var alertTitle: String?
     var alertDescription: String?
     var alertImage: UIImage?
-    var alertAuthor: String?
+    var alertAuthorName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class DetailedAlertViewController: UIViewController {
         
         titleLabel.text = alertTitle! ?? ""
         
-        authorLabel.text = "Posted by " + alertAuthor! ?? ""
+        authorLabel.text = "Posted by " + alertAuthorName! ?? ""
         
         descriptionLabel.text = alertDescription! ?? ""
         
