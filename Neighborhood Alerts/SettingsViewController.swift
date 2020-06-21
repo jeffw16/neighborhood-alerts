@@ -8,11 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SettingsViewController: UIViewController {
     
     let logoutSegueIdentifier: String = "LogoutSegueIdentifier"
     
+    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailAddressLabel: UILabel!
     
     override func viewDidLoad() {
@@ -22,7 +24,20 @@ class SettingsViewController: UIViewController {
         // populate email address on settings VC
         if let user = user {
             let email = user.email
-            emailAddressLabel!.text = "Email address: \(email ?? "Unknown")"
+            if email != nil {
+                emailAddressLabel!.text = "\(email!)"
+                let db = Firestore.firestore()
+                let docRef = db.collection("users").document(email!)
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+//                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                        print("Document data: \(dataDescription)")
+                        self.fullNameLabel!.text = document.data()!["fullName"] as? String
+                    }
+                }
+            } else {
+                emailAddressLabel!.text = "Email address: Unknown"
+            }
         }
     }
     
