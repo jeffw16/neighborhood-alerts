@@ -9,20 +9,27 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     let loginSegueIdentifier = "LoginSegueIdentifier"
+    let createAccountBeginSegueIdentifier = "CreateAccountBeginSegueIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // set up text field delegates to allow for pressing return
+        // to jump to the next text field, as appropriate!
+        emailAddressField.delegate = self
+        passwordField.delegate = self
     }
     
     // Attempt to log in with Firebase
     @IBAction func loginAction(_ sender: Any) {
+        login()
+    }
+    
+    func login() {
         let emailAddress: String = emailAddressField!.text!
         let password: String = passwordField!.text!
         
@@ -55,21 +62,27 @@ class LoginViewController: UIViewController {
             let destination = segue.destination as? TabViewController {
             // pass login VC to tab VC so it can come back during logout
             destination.origin = self
+        } else if segue.identifier == createAccountBeginSegueIdentifier,
+            let destination = segue.destination as? CreateAccountViewController {
+            // pass login VC to create account VC so it can reference login segue
+            destination.loginVC = self
         }
     }
     
+    // when return pressed and currently editing email address:
     // move from email address to password
-    // source: https://stackoverflow.com/questions/31766896/switching-between-text-fields-on-pressing-return-key-in-swift
+    // when return pressed and currently editing password:
+    // attempt log in
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       // Try to find next responder
-       if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-          nextField.becomeFirstResponder()
-       } else {
-          // Not found, so remove keyboard.
-          textField.resignFirstResponder()
-       }
-       // Do not add a line break
-       return false
+        textField.resignFirstResponder()
+        
+        if textField == emailAddressField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            login()
+        }
+        
+        return true
     }
     
     // hide keyboard when pressing the screen

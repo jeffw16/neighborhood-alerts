@@ -41,7 +41,7 @@ class MapViewController: UIViewController {
         } else {
             // Show alert letting the user know they have to turn this on.
             let alertController = UIAlertController(
-                title: "Location Services Off",
+                title: "Location services off",
                 message: "In order to use Neighborhood Alerts, you need to turn location services on in Settings.",
                 preferredStyle: .alert)
             alertController.addAction(UIAlertAction(
@@ -64,7 +64,7 @@ class MapViewController: UIViewController {
             mapView.showsUserLocation = true
         case .restricted: // Show an alert letting them know what’s up
             let alertController = UIAlertController(
-                title: "Location Services Off",
+                title: "Location services off",
                 message: "In order to use Neighborhood Alerts, you need to turn location services on in Settings.",
                 preferredStyle: .alert)
             alertController.addAction(UIAlertAction(
@@ -74,7 +74,7 @@ class MapViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
         case .denied: // Show alert telling users how to turn on permissions
             let alertController = UIAlertController(
-                title: "Location Services Off",
+                title: "Location services off",
                 message: "In order to use Neighborhood Alerts, you need to turn location services on in Settings.",
                 preferredStyle: .alert)
             alertController.addAction(UIAlertAction(

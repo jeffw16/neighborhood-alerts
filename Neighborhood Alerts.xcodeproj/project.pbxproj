@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,8 +20,10 @@
 		0011E590249F01A20048860C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E58F249F01A20048860C /* LoginViewController.swift */; };
 		0011E592249F0FB30048860C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E591249F0FB30048860C /* SettingsViewController.swift */; };
 		0011E594249F10570048860C /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E593249F10570048860C /* TabViewController.swift */; };
+		0011E596249FE4EC0048860C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E595249FE4EC0048860C /* Alert.swift */; };
+		0011E598249FE5D20048860C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E597249FE5D20048860C /* CreateAccountViewController.swift */; };
 		1008429B249FBA0200E0EC0D /* DetailedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1008429A249FBA0200E0EC0D /* DetailedAlertViewController.swift */; };
-		224C5962196A1578BFDF54BF /* Pods_Neighborhood_Alerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E465D5CEEAA90DB8E336E49 /* Pods_Neighborhood_Alerts.framework */; };
+		DF0B268DEC6F28A0C6016C3F /* Pods_Neighborhood_Alerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE829E4DFEA0C7FDF3C14FB /* Pods_Neighborhood_Alerts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +42,11 @@
 		0011E58F249F01A20048860C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0011E591249F0FB30048860C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0011E593249F10570048860C /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		0011E595249FE4EC0048860C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0011E597249FE5D20048860C /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		0C158DA4FF9F0D78A9F20E3C /* Pods-Neighborhood Alerts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighborhood Alerts.release.xcconfig"; path = "Target Support Files/Pods-Neighborhood Alerts/Pods-Neighborhood Alerts.release.xcconfig"; sourceTree = "<group>"; };
 		1008429A249FBA0200E0EC0D /* DetailedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedAlertViewController.swift; sourceTree = "<group>"; };
-		8E465D5CEEAA90DB8E336E49 /* Pods_Neighborhood_Alerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neighborhood_Alerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE829E4DFEA0C7FDF3C14FB /* Pods_Neighborhood_Alerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neighborhood_Alerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ABCB9C2E74FC7FC4A8F3E2 /* Pods-Neighborhood Alerts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighborhood Alerts.debug.xcconfig"; path = "Target Support Files/Pods-Neighborhood Alerts/Pods-Neighborhood Alerts.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224C5962196A1578BFDF54BF /* Pods_Neighborhood_Alerts.framework in Frameworks */,
+				DF0B268DEC6F28A0C6016C3F /* Pods_Neighborhood_Alerts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,19 +85,21 @@
 			children = (
 				0011E572249EDEB00048860C /* AppDelegate.swift */,
 				0011E574249EDEB00048860C /* SceneDelegate.swift */,
+				0011E57A249EDEB00048860C /* Main.storyboard */,
+				0011E593249F10570048860C /* TabViewController.swift */,
 				0011E576249EDEB00048860C /* MapViewController.swift */,
 				0011E578249EDEB00048860C /* ListViewController.swift */,
-				0011E57A249EDEB00048860C /* Main.storyboard */,
+				0011E58F249F01A20048860C /* LoginViewController.swift */,
+				0011E597249FE5D20048860C /* CreateAccountViewController.swift */,
+				0011E591249F0FB30048860C /* SettingsViewController.swift */,
+				0011E595249FE4EC0048860C /* Alert.swift */,
+				0011E58B249EE94E0048860C /* AlertLocation.swift */,
 				1008429A249FBA0200E0EC0D /* DetailedAlertViewController.swift */,
 				0011E580249EDEB20048860C /* Assets.xcassets */,
 				0011E582249EDEB20048860C /* LaunchScreen.storyboard */,
 				0011E585249EDEB20048860C /* Info.plist */,
 				0011E57D249EDEB00048860C /* Neighborhood_Alerts.xcdatamodeld */,
-				0011E58B249EE94E0048860C /* AlertLocation.swift */,
 				0011E58D249EFD850048860C /* GoogleService-Info.plist */,
-				0011E58F249F01A20048860C /* LoginViewController.swift */,
-				0011E591249F0FB30048860C /* SettingsViewController.swift */,
-				0011E593249F10570048860C /* TabViewController.swift */,
 			);
 			path = "Neighborhood Alerts";
 			sourceTree = "<group>";
@@ -110,7 +116,7 @@
 		A267355542F917A09F82CF8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8E465D5CEEAA90DB8E336E49 /* Pods_Neighborhood_Alerts.framework */,
+				3CE829E4DFEA0C7FDF3C14FB /* Pods_Neighborhood_Alerts.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 				0011E56B249EDEB00048860C /* Sources */,
 				0011E56C249EDEB00048860C /* Frameworks */,
 				0011E56D249EDEB00048860C /* Resources */,
+				EE1DB508DB9A3D4ED01436D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +213,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE1DB508DB9A3D4ED01436D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neighborhood Alerts/Pods-Neighborhood Alerts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neighborhood Alerts/Pods-Neighborhood Alerts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Neighborhood Alerts/Pods-Neighborhood Alerts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -213,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0011E598249FE5D20048860C /* CreateAccountViewController.swift in Sources */,
 				0011E590249F01A20048860C /* LoginViewController.swift in Sources */,
 				0011E579249EDEB00048860C /* ListViewController.swift in Sources */,
 				0011E577249EDEB00048860C /* MapViewController.swift in Sources */,
@@ -221,6 +246,7 @@
 				0011E58C249EE94E0048860C /* AlertLocation.swift in Sources */,
 				0011E573249EDEB00048860C /* AppDelegate.swift in Sources */,
 				0011E594249F10570048860C /* TabViewController.swift in Sources */,
+				0011E596249FE4EC0048860C /* Alert.swift in Sources */,
 				0011E575249EDEB00048860C /* SceneDelegate.swift in Sources */,
 				0011E592249F0FB30048860C /* SettingsViewController.swift in Sources */,
 			);
@@ -370,7 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3HCTJYS28;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3HCTJYS28;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

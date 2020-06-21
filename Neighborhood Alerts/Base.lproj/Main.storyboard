@@ -98,14 +98,27 @@
                                 <rect key="frame" x="61" y="236" width="293" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wvx-KV-Hiw">
                                 <rect key="frame" x="61" y="311" width="293" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5it-XS-NcT">
+                                <rect key="frame" x="155" y="574" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create account"/>
+                                <connections>
+                                    <segue destination="eHT-Zo-K54" kind="show" identifier="CreateAccountBeginSegueIdentifier" id="UrP-aJ-gVT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZo-iK-sph">
+                                <rect key="frame" x="147" y="691" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Forgot password?"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bqS-91-BrQ"/>
@@ -120,6 +133,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AS8-gJ-QhM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2218.840579710145" y="-19.419642857142858"/>
+        </scene>
+        <!--Create Account View Controller-->
+        <scene sceneID="TDW-Ug-h2f">
+            <objects>
+                <viewController id="eHT-Zo-K54" customClass="CreateAccountViewController" customModule="Neighborhood_Alerts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xbv-4u-RrS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVN-NX-0NV">
+                                <rect key="frame" x="61" y="79" width="293" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbI-bG-jck">
+                                <rect key="frame" x="61" y="324" width="293" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3w-iS-dJr">
+                                <rect key="frame" x="61" y="238" width="293" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                            </textField>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sDv-4o-u5F">
+                                <rect key="frame" x="61" y="157" width="293" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozQ-rT-Hfs">
+                                <rect key="frame" x="155" y="499" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create account"/>
+                                <connections>
+                                    <action selector="createAccountAction:" destination="eHT-Zo-K54" eventType="touchUpInside" id="Ba7-nf-4mb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLt-si-KcG">
+                                <rect key="frame" x="61" y="404" width="293" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="street-address"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ywb-vG-g7X"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wGs-vL-kXa"/>
+                    <connections>
+                        <outlet property="emailAddressField" destination="HVN-NX-0NV" id="rm2-78-wNi"/>
+                        <outlet property="homeAddressField" destination="jLt-si-KcG" id="rXc-xj-EFX"/>
+                        <outlet property="nameField" destination="tbI-bG-jck" id="fGS-h2-wxw"/>
+                        <outlet property="passwordField" destination="sDv-4o-u5F" id="3uh-qb-b9m"/>
+                        <outlet property="phoneNumberField" destination="I3w-iS-dJr" id="O2E-zZ-fec"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="CreateAccountLoginSegueIdentifier" modalPresentationStyle="fullScreen" id="swP-Np-hf6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxY-32-8OS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2219" y="726"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -305,12 +382,21 @@
                         <viewLayoutGuide key="safeArea" id="AsP-Vv-Aac"/>
                     </view>
                     <navigationItem key="navigationItem" id="sVF-VR-h0f"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="vw0-fw-Ay3" id="0lL-Ly-ynZ"/>
+                        <outlet property="descriptionLabel" destination="HtO-FQ-Kof" id="MUG-8P-uRv"/>
+                        <outlet property="imageView" destination="zgc-ln-A6A" id="lXY-iQ-qi7"/>
+                        <outlet property="titleLabel" destination="39S-Fj-8OZ" id="lnD-nW-6Ap"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiK-27-lxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2366.666666666667" y="359.59821428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="swP-Np-hf6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="map.fill" catalog="system" width="128" height="113"/>
