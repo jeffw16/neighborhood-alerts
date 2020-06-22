@@ -16,12 +16,13 @@
 		0011E581249EDEB20048860C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0011E580249EDEB20048860C /* Assets.xcassets */; };
 		0011E584249EDEB20048860C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0011E582249EDEB20048860C /* LaunchScreen.storyboard */; };
 		0011E58C249EE94E0048860C /* AlertLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E58B249EE94E0048860C /* AlertLocation.swift */; };
-		0011E58E249EFD850048860C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0011E58D249EFD850048860C /* GoogleService-Info.plist */; };
 		0011E590249F01A20048860C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E58F249F01A20048860C /* LoginViewController.swift */; };
 		0011E592249F0FB30048860C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E591249F0FB30048860C /* SettingsViewController.swift */; };
 		0011E594249F10570048860C /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E593249F10570048860C /* TabViewController.swift */; };
 		0011E596249FE4EC0048860C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E595249FE4EC0048860C /* Alert.swift */; };
 		0011E598249FE5D20048860C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E597249FE5D20048860C /* CreateAccountViewController.swift */; };
+		0011E59D24A02B810048860C /* NotificationsPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E59C24A02B810048860C /* NotificationsPermissions.swift */; };
+		0011E59F24A02CF50048860C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0011E59E24A02CF50048860C /* GoogleService-Info.plist */; };
 		1008429B249FBA0200E0EC0D /* DetailedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1008429A249FBA0200E0EC0D /* DetailedAlertViewController.swift */; };
 		105CDE25249FFFA100E7917A /* NewAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CDE24249FFFA100E7917A /* NewAlertViewController.swift */; };
 		105CDE2724A0017100E7917A /* CreateNewAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CDE2624A0017100E7917A /* CreateNewAlertViewController.swift */; };
@@ -40,12 +41,14 @@
 		0011E583249EDEB20048860C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0011E585249EDEB20048860C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0011E58B249EE94E0048860C /* AlertLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertLocation.swift; sourceTree = "<group>"; };
-		0011E58D249EFD850048860C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0011E58F249F01A20048860C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0011E591249F0FB30048860C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0011E593249F10570048860C /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		0011E595249FE4EC0048860C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		0011E597249FE5D20048860C /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		0011E59924A02A8C0048860C /* Neighborhood Alerts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Neighborhood Alerts.entitlements"; sourceTree = "<group>"; };
+		0011E59C24A02B810048860C /* NotificationsPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPermissions.swift; sourceTree = "<group>"; };
+		0011E59E24A02CF50048860C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C158DA4FF9F0D78A9F20E3C /* Pods-Neighborhood Alerts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighborhood Alerts.release.xcconfig"; path = "Target Support Files/Pods-Neighborhood Alerts/Pods-Neighborhood Alerts.release.xcconfig"; sourceTree = "<group>"; };
 		1008429A249FBA0200E0EC0D /* DetailedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedAlertViewController.swift; sourceTree = "<group>"; };
 		105CDE24249FFFA100E7917A /* NewAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		0011E571249EDEB00048860C /* Neighborhood Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				0011E59924A02A8C0048860C /* Neighborhood Alerts.entitlements */,
 				0011E572249EDEB00048860C /* AppDelegate.swift */,
 				0011E574249EDEB00048860C /* SceneDelegate.swift */,
 				0011E57A249EDEB00048860C /* Main.storyboard */,
@@ -105,7 +109,8 @@
 				0011E582249EDEB20048860C /* LaunchScreen.storyboard */,
 				0011E585249EDEB20048860C /* Info.plist */,
 				0011E57D249EDEB00048860C /* Neighborhood_Alerts.xcdatamodeld */,
-				0011E58D249EFD850048860C /* GoogleService-Info.plist */,
+				0011E59E24A02CF50048860C /* GoogleService-Info.plist */,
+				0011E59C24A02B810048860C /* NotificationsPermissions.swift */,
 			);
 			path = "Neighborhood Alerts";
 			sourceTree = "<group>";
@@ -188,7 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0011E584249EDEB20048860C /* LaunchScreen.storyboard in Resources */,
-				0011E58E249EFD850048860C /* GoogleService-Info.plist in Resources */,
+				0011E59F24A02CF50048860C /* GoogleService-Info.plist in Resources */,
 				0011E581249EDEB20048860C /* Assets.xcassets in Resources */,
 				0011E57C249EDEB00048860C /* Main.storyboard in Resources */,
 			);
@@ -255,6 +260,7 @@
 				0011E573249EDEB00048860C /* AppDelegate.swift in Sources */,
 				0011E594249F10570048860C /* TabViewController.swift in Sources */,
 				0011E596249FE4EC0048860C /* Alert.swift in Sources */,
+				0011E59D24A02B810048860C /* NotificationsPermissions.swift in Sources */,
 				0011E575249EDEB00048860C /* SceneDelegate.swift in Sources */,
 				0011E592249F0FB30048860C /* SettingsViewController.swift in Sources */,
 			);
@@ -401,6 +407,7 @@
 			baseConfigurationReference = E9ABCB9C2E74FC7FC4A8F3E2 /* Pods-Neighborhood Alerts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Neighborhood Alerts/Neighborhood Alerts.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3CX5BHYB2J;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
@@ -421,6 +428,7 @@
 			baseConfigurationReference = 0C158DA4FF9F0D78A9F20E3C /* Pods-Neighborhood Alerts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Neighborhood Alerts/Neighborhood Alerts.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3CX5BHYB2J;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
