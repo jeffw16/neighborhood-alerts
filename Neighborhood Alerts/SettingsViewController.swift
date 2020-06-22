@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailAddressLabel: UILabel!
+    @IBOutlet weak var homeAddressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,10 @@ class SettingsViewController: UIViewController {
                     if let document = document, document.exists {
 //                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
 //                        print("Document data: \(dataDescription)")
-                        self.fullNameLabel!.text = document.data()!["fullName"] as? String
+                        let data = document.data()!
+                        
+                        self.fullNameLabel!.text = data["fullName"] as? String
+                        self.homeAddressLabel!.text = data["homeAddress"] as? String
                     }
                 }
             } else {
