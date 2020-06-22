@@ -20,19 +20,21 @@ class DetailedAlertViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
         
-        titleLabel.text = alertTitle! ?? ""
+        titleLabel.text = alertTitle ?? ""
         
-        authorLabel.text = "Posted by " + alertAuthorName! ?? ""
+        authorLabel.text = "Posted by " + (alertAuthorName ?? "")
         
-        descriptionLabel.text = alertDescription! ?? ""
+        descriptionLabel.text = alertDescription ?? ""
         
         if alertImage != nil {
             imageView.image = alertImage

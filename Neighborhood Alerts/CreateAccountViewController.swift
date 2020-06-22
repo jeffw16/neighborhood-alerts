@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -24,8 +24,11 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        emailAddressField.delegate = self
+        passwordField.delegate = self
+        phoneNumberField.delegate = self
+        nameField.delegate = self
+        homeAddressField.delegate = self
     }
     
     @IBAction func createAccountAction(_ sender: Any) {
@@ -81,6 +84,8 @@ class CreateAccountViewController: UIViewController {
             phoneNumberField.becomeFirstResponder()
         case phoneNumberField:
             nameField.becomeFirstResponder()
+        case nameField:
+            homeAddressField.becomeFirstResponder()
         case homeAddressField:
             createAccount()
         default:

@@ -26,6 +26,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="gxK-Jf-5BK" id="eF0-6M-kwD"/>
+                        <segue destination="swH-ZN-HfZ" kind="presentation" identifier="MapToDetailedAlertViewSegueIdentifier" id="pca-fT-dKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -180,6 +181,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="street-address"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uv-7M-QmI">
+                                <rect key="frame" x="121" y="20" width="173" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ywb-vG-g7X"/>
@@ -466,7 +474,7 @@
             <objects>
                 <viewController id="swH-ZN-HfZ" customClass="DetailedAlertViewController" customModule="Neighborhood_Alerts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sfu-dN-Bkc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39S-Fj-8OZ">
@@ -527,7 +535,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jak-vi-Gbf"/>
+        <segue reference="pca-fT-dKh"/>
+        <segue reference="swP-Np-hf6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.dash" catalog="system" width="128" height="85"/>
