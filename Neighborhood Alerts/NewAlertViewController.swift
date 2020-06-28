@@ -13,6 +13,7 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
     var alertCategory: String?
     
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,12 +26,41 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
         categoryLabel.text = alertCategory ?? ""
     }
     
+    func takePicture(){
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera;
+            imagePicker.allowsEditing = false
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func openPhotoLibrary(){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
     @IBAction func addImageButtonPressed(_ sender: Any) {
-        let vc = UIImagePickerController()
-        vc.sourceType = .camera
-        vc.allowsEditing = true
-        vc.delegate = self
-        present(vc, animated: true)
+        let controller = UIAlertController(
+            title: "",
+            message: "Choose option",
+            preferredStyle: .actionSheet)
+        
+        controller.addAction(UIAlertAction(title: "Take Picture", style: .default, handler: {
+            (action) in takePicture()
+        }))
+        controller.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {
+            (action) in openPhotoLibrary()
+        }))
+        present(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func openCameraButtonPressed(_ sender: Any) {
         
     }
     
