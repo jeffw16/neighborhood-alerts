@@ -52,14 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                     let locationObject = CLLocation(latitude: alert.latitude, longitude: alert.longitude)
                     
                     if self.locationManager.location!.distance(from: locationObject) < self.resultRadius {
-//                        let pointAnnotation = MKPointAnnotation()
                         let pointAnnotation = AlertLocation(alert: alert)
-//                        pointAnnotation.title = alert.displayName
-//                        pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: alert.latitude, longitude: alert.longitude)
-                        
-//                        let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: alert.id)
-                        
-//                        self.annotationsOnMap.append(pinAnnotationView.annotation!)
                         self.annotationsOnMap.append(pointAnnotation)
                     }
                 }
@@ -149,14 +142,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         return view
     }
-    
-//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//        print("Annotation selected")
-//        let alertId: String = view.reuseIdentifier ?? "invalidAlertId"
-//        self.selectedAlertId = alertId
-//        view.setSelected(false, animated: true)
-//        self.performSegue(withIdentifier: mapToDetailedAlertViewSegueIdentifier, sender: self)
-//    }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard let alertLoc = view.annotation as? AlertLocation else { return }
