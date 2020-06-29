@@ -10,23 +10,20 @@ import UIKit
 
 class CreateNewAlertViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
-    
-
     @IBOutlet weak var tableView: UITableView!
     
-    var categoriesList: [String] = []
+    var categoriesList: [String] = ["Fire", "Bear Sighting", "Burglary", "Other"]
     
     let newAlertSegueIdentifier: String = "NewAlertSegueIdentifier"
     
     let categoryCellIdentifier: String = "CategoryCellIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        categoriesList.append("Fire")
-        categoriesList.append("Bear Sighting")
-        categoriesList.append("Burglary")
-        categoriesList.append("Other")
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.reloadData()
     }
     
 
