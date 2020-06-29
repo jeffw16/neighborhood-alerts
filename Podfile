@@ -14,5 +14,7 @@ target 'Neighborhood Alerts' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'LocationPickerViewController', :git => 'https://github.com/jeffw16/LocationPicker.git', :branch => 'master'
 
 end

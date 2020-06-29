@@ -155,8 +155,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let destination = segue.destination as? DetailedAlertViewController {
             destination.alertTitle = selectedAlertLoc?.displayName
             destination.alertDescription = selectedAlertLoc?.alert.description
-            destination.alertImage = selectedAlertLoc?.alert.image
+            destination.alertImageUrl = selectedAlertLoc?.alert.image
             destination.alertAuthorName = selectedAlertLoc?.alert.authorName
+            destination.alertCategory = selectedAlertLoc?.alert.category
         }
     }
 }

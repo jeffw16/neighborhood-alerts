@@ -55,7 +55,7 @@ class ChangeAddressViewController: UIViewController {
                         title: "OK",
                         style: .default,
                         handler: {
-                            (_) in
+                            _ in
                             self.performSegue(withIdentifier: self.unwindToSettingsSegueIdentifier, sender: self)
                     }))
                     self.present(alertController, animated: true, completion: nil)

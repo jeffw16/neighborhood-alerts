@@ -150,14 +150,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let alertIndex:Int = tableView.indexPathForSelectedRow?.row ?? 0
             
             nextVC.alertTitle = alertsList[alertIndex].displayName
-            
             nextVC.alertDescription = alertsList[alertIndex].description
-            
-            nextVC.alertImage = alertsList[alertIndex].image
-            
+            nextVC.alertImageUrl = alertsList[alertIndex].image
             nextVC.alertAuthorName = alertsList[alertIndex].authorName
-            
-            
+            nextVC.alertCategory = alertsList[alertIndex].category
         }
     }
 

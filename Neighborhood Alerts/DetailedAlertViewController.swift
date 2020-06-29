@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class DetailedAlertViewController: UIViewController {
     
     var alertTitle: String?
     var alertDescription: String?
-    var alertImage: UIImage?
+    var alertImageUrl: String?
     var alertAuthorName: String?
+    var alertCategory: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,35 +27,32 @@ class DetailedAlertViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
         
         titleLabel.text = alertTitle ?? ""
-        
         authorLabel.text = "Posted by " + (alertAuthorName ?? "")
-        
         descriptionLabel.text = alertDescription ?? ""
+        categoryLabel.text = alertCategory ?? ""
         
-        if alertImage != nil {
-            imageView.image = alertImage
+        if alertImageUrl != nil {
+            // download the image
+            let imageRef = Storage.storage().reference().child(alertImageUrl!)
+            
+            imageRef.getData(maxSize: 20 * 1024 * 1024) {
+                (data, error) in
+                
+                if error == nil {
+                    // got the image, set it
+                    self.imageView.image = UIImage(data: data!)
+                } else {
+                    print(error!)
+                }
+            }
         }
-        
-        
-        
-        
-        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

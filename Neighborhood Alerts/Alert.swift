@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 import CoreLocation
+import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 class Alert {
     var id: String // UUID of alert location
@@ -17,20 +19,19 @@ class Alert {
     
     var description: String
     var category: String
-    var image: UIImage?
+    var image: String? // URL of the image, if it exists
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
     var authorName: String
     var authorEmail: String
     var created: Timestamp
 
-    init(id: String, displayName: String, description: String, category: String, image: UIImage?, latitude: CLLocationDegrees, longitude: CLLocationDegrees, authorName: String, authorEmail: String, created: Timestamp) {
+    init(id: String, displayName: String, description: String, category: String, image: String?, latitude: CLLocationDegrees, longitude: CLLocationDegrees, authorName: String, authorEmail: String, created: Timestamp) {
         self.id = id
         self.displayName = displayName
         self.description = description
         self.category = category
-        self.image = image ?? nil
-
+        self.image = image
         self.latitude = latitude
         self.longitude = longitude
         self.authorName = authorName
@@ -62,22 +63,19 @@ class Alert {
                     let authorEmail = data["authorEmail"] as! String
                     let category = data["category"] as! String
                     let created = data["created"] as! Timestamp
-                    let image = data["image"] as? UIImage
+                    let imageStringOpt = data["image"] as? String
                     let location = data["location"] as! GeoPoint
-                    
-//                    print(id, displayName, description, authorName, authorEmail, category, created, created.seconds, location, location.latitude, location.longitude)
                     
                     let alertToAdd = Alert(id: id,
                                            displayName: displayName,
                                            description: description,
                                            category: category,
-                                           image: image,
+                                           image: nil,
                                            latitude: CLLocationDegrees(location.latitude),
                                            longitude: CLLocationDegrees(location.longitude),
                                            authorName: authorName,
                                            authorEmail: authorEmail,
                                            created: created)
-                    
                     alertsToReturn.append(alertToAdd)
                 }
             }

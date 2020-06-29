@@ -12,7 +12,7 @@ class CreateNewAlertViewController: UIViewController,UITableViewDataSource, UITa
 
     @IBOutlet weak var tableView: UITableView!
     
-    var categoriesList: [String] = ["Fire", "Bear Sighting", "Burglary", "Other"]
+    var categoriesList: [String] = ["COVID-19", "Fire", "Burglary", "Lost pet", "Found pet", "Wild animal sighting", "Inclement weather", "Noise", "Party", "Other"]
     
     let newAlertSegueIdentifier: String = "NewAlertSegueIdentifier"
     
@@ -58,5 +58,5 @@ class CreateNewAlertViewController: UIViewController,UITableViewDataSource, UITa
         }
     }
     
-
+    @IBAction func unwindToCreateNewAlerts(segue: UIStoryboardSegue) {}
 }

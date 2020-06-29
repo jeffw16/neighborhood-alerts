@@ -309,7 +309,7 @@ email address associated with this account.</string>
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
-        <!--Create New Alert-->
+        <!--Create new alert-->
         <scene sceneID="Gdr-13-RXk">
             <objects>
                 <viewController id="L9t-On-qZX" customClass="CreateNewAlertViewController" customModule="Neighborhood_Alerts" customModuleProvider="target" sceneMemberID="viewController">
@@ -339,7 +339,7 @@ email address associated with this account.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qPU-aT-drv"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create New Alert" largeTitleDisplayMode="always" id="RQF-lk-yzw" customClass="CreateNewAlertViewController"/>
+                    <navigationItem key="navigationItem" title="Create new alert" largeTitleDisplayMode="always" id="RQF-lk-yzw" customClass="CreateNewAlertViewController"/>
                     <connections>
                         <outlet property="tableView" destination="bBQ-vw-Zf3" id="GtG-x0-fn0"/>
                     </connections>
@@ -348,7 +348,7 @@ email address associated with this account.</string>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="1069.4196428571429"/>
         </scene>
-        <!--New Alert View Controller-->
+        <!--New alert details-->
         <scene sceneID="xHG-JZ-K76">
             <objects>
                 <viewController id="9EJ-Yd-kBt" customClass="NewAlertViewController" customModule="Neighborhood_Alerts" customModuleProvider="target" sceneMemberID="viewController">
@@ -356,67 +356,78 @@ email address associated with this account.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creating new alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5i-Rm-LqW">
-                                <rect key="frame" x="20" y="140" width="141" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3G-bC-wbd">
-                                <rect key="frame" x="20" y="215" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-2R-Hm0">
-                                <rect key="frame" x="20" y="266" width="88" height="21"/>
+                                <rect key="frame" x="163" y="266" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-Ga-kz4">
-                                <rect key="frame" x="116" y="259" width="278" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-W8-zzN">
+                                <rect key="frame" x="189" y="756" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WKR-eK-U56">
-                                <rect key="frame" x="116" y="208" width="278" height="34"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="publishAlert:" destination="9EJ-Yd-kBt" eventType="touchUpInside" id="Syd-Md-7mN"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-56-WEC">
+                                <rect key="frame" x="68" y="476" width="278" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" text="Add info here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WkP-vC-vQb">
+                                <rect key="frame" x="20" y="295" width="374" height="121"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-vl-igH">
-                                <rect key="frame" x="20" y="355" width="74" height="30"/>
+                                <rect key="frame" x="170" y="438" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Image"/>
                                 <connections>
                                     <action selector="addImageButtonPressed:" destination="9EJ-Yd-kBt" eventType="touchUpInside" id="efu-Wo-bVB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-W8-zzN">
-                                <rect key="frame" x="189" y="689" width="37" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alert category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5i-Rm-LqW">
+                                <rect key="frame" x="20" y="140" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of alert" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7a-Pn-oAR">
+                                <rect key="frame" x="68" y="207" width="278" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYb-5u-rf5">
+                                <rect key="frame" x="156" y="169" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select location"/>
+                                <connections>
+                                    <action selector="selectLocation:" destination="9EJ-Yd-kBt" eventType="touchUpInside" id="bcl-84-OWq"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-56-WEC">
-                                <rect key="frame" x="116" y="355" width="278" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ppn-W5-PMC"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="o7G-SP-IcX"/>
+                    <navigationItem key="navigationItem" title="New alert details" largeTitleDisplayMode="always" id="o7G-SP-IcX"/>
                     <connections>
+                        <outlet property="alertDisplayNameField" destination="p7a-Pn-oAR" id="Jk9-Oe-o6W"/>
                         <outlet property="categoryLabel" destination="C5i-Rm-LqW" id="pqS-N2-fYq"/>
+                        <outlet property="descriptionText" destination="WkP-vC-vQb" id="BGd-aJ-ytR"/>
                         <outlet property="imageView" destination="m6n-56-WEC" id="hRG-RG-wz1"/>
+                        <segue destination="3Sk-hw-FfK" kind="show" identifier="LocationPickerSegue" id="z9e-qA-k6h"/>
+                        <segue destination="D7J-Hl-YyR" kind="unwind" identifier="UnwindToCreateNewAlertsSegue" unwindAction="unwindToCreateNewAlertsWithSegue:" id="8Y0-Q1-Xpr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMq-xf-kaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="D7J-Hl-YyR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2357.971014492754" y="1069.4196428571429"/>
         </scene>
@@ -710,14 +721,14 @@ receive alerts from.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39S-Fj-8OZ">
-                                <rect key="frame" x="20" y="95" width="374" height="21"/>
+                                <rect key="frame" x="20" y="82" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgc-ln-A6A">
-                                <rect key="frame" x="20" y="124" width="374" height="424"/>
+                                <rect key="frame" x="20" y="152" width="374" height="396"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-FQ-Kof">
@@ -749,6 +760,13 @@ receive alerts from.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Fake News"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-AJ-8Rp">
+                                <rect key="frame" x="20" y="111" width="374" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AsP-Vv-Aac"/>
@@ -756,6 +774,7 @@ receive alerts from.</string>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="sVF-VR-h0f"/>
                     <connections>
                         <outlet property="authorLabel" destination="vw0-fw-Ay3" id="0lL-Ly-ynZ"/>
+                        <outlet property="categoryLabel" destination="sjz-AJ-8Rp" id="kHN-o8-mJB"/>
                         <outlet property="descriptionLabel" destination="HtO-FQ-Kof" id="MUG-8P-uRv"/>
                         <outlet property="imageView" destination="zgc-ln-A6A" id="lXY-iQ-qi7"/>
                         <outlet property="titleLabel" destination="39S-Fj-8OZ" id="lnD-nW-6Ap"/>
@@ -764,6 +783,26 @@ receive alerts from.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiK-27-lxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2366.666666666667" y="359.59821428571428"/>
+        </scene>
+        <!--Pick location-->
+        <scene sceneID="I6E-oa-4nD">
+            <objects>
+                <viewController id="3Sk-hw-FfK" customClass="LocationPicker" customModule="LocationPickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pSq-my-Smq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Vxy-Vc-PoN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pick location" id="5bd-Ln-XlM"/>
+                    <connections>
+                        <segue destination="NQp-xm-b18" kind="unwind" identifier="UnwindToNewAlertSegue" unwindAction="unwindToNewAlertDetailsWithSegue:" id="DwJ-Ew-Gh8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="db1-ce-oDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="NQp-xm-b18" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3090" y="361"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
