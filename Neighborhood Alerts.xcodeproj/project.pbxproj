@@ -36,7 +36,7 @@
 		0005FB7624A952F90024811C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressViewController.swift; sourceTree = "<group>"; };
-		0011E56F249EDEB00048860C /* Neighborhood Alerts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighborhood Alerts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0011E56F249EDEB00048860C /* Neighbor Alerts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighbor Alerts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0011E572249EDEB00048860C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0011E574249EDEB00048860C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0011E576249EDEB00048860C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		0011E570249EDEB00048860C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0011E56F249EDEB00048860C /* Neighborhood Alerts.app */,
+				0011E56F249EDEB00048860C /* Neighbor Alerts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 			);
 			name = "Neighborhood Alerts";
 			productName = "Neighborhood Alerts";
-			productReference = 0011E56F249EDEB00048860C /* Neighborhood Alerts.app */;
+			productReference = 0011E56F249EDEB00048860C /* Neighbor Alerts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -429,7 +429,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mywikis.NeighborhoodAlerts;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Neighbor Alerts";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,7 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mywikis.NeighborhoodAlerts;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Neighbor Alerts";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
