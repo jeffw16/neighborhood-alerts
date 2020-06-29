@@ -60,6 +60,11 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
         present(controller, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imagePicked.image = image
+        dismiss(animated:true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
