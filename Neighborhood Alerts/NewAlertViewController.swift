@@ -14,6 +14,7 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,10 +61,10 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
         present(controller, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imageView.image = image
-        dismiss(animated:true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
