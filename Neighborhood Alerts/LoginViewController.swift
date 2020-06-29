@@ -69,6 +69,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // used by the ResetPasswordViewController
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
+    
     // when return pressed and currently editing email address:
     // move from email address to password
     // when return pressed and currently editing password:

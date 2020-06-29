@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0005FB7724A952F90024811C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7624A952F90024811C /* ChangePasswordViewController.swift */; };
+		0005FB7924A95CE30024811C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */; };
+		0005FB7B24A961E10024811C /* ChangeAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */; };
 		0011E573249EDEB00048860C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E572249EDEB00048860C /* AppDelegate.swift */; };
 		0011E575249EDEB00048860C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E574249EDEB00048860C /* SceneDelegate.swift */; };
 		0011E577249EDEB00048860C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E576249EDEB00048860C /* MapViewController.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0005FB7624A952F90024811C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressViewController.swift; sourceTree = "<group>"; };
 		0011E56F249EDEB00048860C /* Neighborhood Alerts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighborhood Alerts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0011E572249EDEB00048860C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0011E574249EDEB00048860C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 				0011E58F249F01A20048860C /* LoginViewController.swift */,
 				0011E597249FE5D20048860C /* CreateAccountViewController.swift */,
 				0011E591249F0FB30048860C /* SettingsViewController.swift */,
+				0005FB7624A952F90024811C /* ChangePasswordViewController.swift */,
+				0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */,
+				0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */,
 				0011E595249FE4EC0048860C /* Alert.swift */,
 				0011E58B249EE94E0048860C /* AlertLocation.swift */,
 				1008429A249FBA0200E0EC0D /* DetailedAlertViewController.swift */,
@@ -250,6 +259,7 @@
 			files = (
 				0011E598249FE5D20048860C /* CreateAccountViewController.swift in Sources */,
 				0011E590249F01A20048860C /* LoginViewController.swift in Sources */,
+				0005FB7924A95CE30024811C /* ResetPasswordViewController.swift in Sources */,
 				105CDE25249FFFA100E7917A /* NewAlertViewController.swift in Sources */,
 				0011E579249EDEB00048860C /* ListViewController.swift in Sources */,
 				0011E577249EDEB00048860C /* MapViewController.swift in Sources */,
@@ -257,12 +267,14 @@
 				105CDE2724A0017100E7917A /* CreateNewAlertViewController.swift in Sources */,
 				0011E57F249EDEB00048860C /* Neighborhood_Alerts.xcdatamodeld in Sources */,
 				0011E58C249EE94E0048860C /* AlertLocation.swift in Sources */,
+				0005FB7724A952F90024811C /* ChangePasswordViewController.swift in Sources */,
 				0011E573249EDEB00048860C /* AppDelegate.swift in Sources */,
 				0011E594249F10570048860C /* TabViewController.swift in Sources */,
 				0011E596249FE4EC0048860C /* Alert.swift in Sources */,
 				0011E59D24A02B810048860C /* NotificationsPermissions.swift in Sources */,
 				0011E575249EDEB00048860C /* SceneDelegate.swift in Sources */,
 				0011E592249F0FB30048860C /* SettingsViewController.swift in Sources */,
+				0005FB7B24A961E10024811C /* ChangeAddressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

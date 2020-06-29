@@ -18,8 +18,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var emailAddressLabel: UILabel!
     @IBOutlet weak var homeAddressLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         // get user info
         let user = Auth.auth().currentUser
         // populate email address on settings VC
@@ -57,5 +56,8 @@ class SettingsViewController: UIViewController {
         // then segue to the login page
         performSegue(withIdentifier: logoutSegueIdentifier, sender: self)
     }
+    
+    // for ChangeAddressViewController
+    @IBAction func unwindToSettings(segue: UIStoryboardSegue) {}
 
 }
