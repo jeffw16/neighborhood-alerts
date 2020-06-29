@@ -13,5 +13,6 @@ target 'Neighborhood Alerts' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Core'
 
 end
