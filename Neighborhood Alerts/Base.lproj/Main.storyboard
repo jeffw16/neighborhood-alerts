@@ -364,9 +364,9 @@ email address associated with this account.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-W8-zzN">
-                                <rect key="frame" x="189" y="756" width="37" height="30"/>
+                                <rect key="frame" x="165" y="756" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Publish alert"/>
                                 <connections>
                                     <action selector="publishAlert:" destination="9EJ-Yd-kBt" eventType="touchUpInside" id="Syd-Md-7mN"/>
                                 </connections>
