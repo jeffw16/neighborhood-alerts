@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailAddressLabel: UILabel!
     @IBOutlet weak var homeAddressLabel: UILabel!
+    @IBOutlet weak var alertsSourceSegCtrl: UISegmentedControl!
     
     override func viewWillAppear(_ animated: Bool) {
         // get user info
@@ -24,10 +25,10 @@ class SettingsViewController: UIViewController {
         // populate email address on settings VC
         if let user = user {
             let email = user.email
-            if email != nil {
-                emailAddressLabel!.text = "\(email!)"
+            if let email = email {
+                emailAddressLabel!.text = "\(email)"
                 let db = Firestore.firestore()
-                let docRef = db.collection("users").document(email!)
+                let docRef = db.collection("users").document(email)
                 docRef.getDocument { (document, error) in
                     if let document = document, document.exists {
 //                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
@@ -38,9 +39,22 @@ class SettingsViewController: UIViewController {
                         self.homeAddressLabel!.text = data["homeAddress"] as? String
                     }
                 }
+                // retrieve user local data from Core Data
+                let userLocalData = CoreDataHandler.fetchUserLocalData(email: email)
+                if userLocalData.count != 0 {
+                    // don't use the defaults if we have Core Data stored that says otherwise
+                    alertsSourceSegCtrl.selectedSegmentIndex = (userLocalData["locationBasedAlerts"] != nil && userLocalData["locationBasedAlerts"] as! Bool == true) ? 0 : 1
+                }
             } else {
                 emailAddressLabel!.text = "Email address: Unknown"
             }
+        }
+    }
+    
+    @IBAction func setAlertSource(_ sender: Any) {
+        let user = Auth.auth().currentUser
+        if let email = user?.email {
+            CoreDataHandler.storeUserLocalData(email: email, key: "locationBasedAlerts", value: alertsSourceSegCtrl.selectedSegmentIndex == 0)
         }
     }
     

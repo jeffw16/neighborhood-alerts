@@ -13,7 +13,7 @@ import FirebaseStorage
 import CoreLocation
 import LocationPickerViewController
 
-class NewAlertViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class NewAlertViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
 
     let locationManager = CLLocationManager()
     let locationPickerSegueIdentifier = "LocationPickerSegue"
@@ -24,19 +24,27 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var descriptionText: UITextView!
+    @IBOutlet weak var descriptionPlaceholder: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var alertDisplayNameField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        descriptionText.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         categoryLabel.text = alertCategory ?? ""
+        
+        descriptionText.layer.borderColor = UIColor.lightGray.cgColor
+        descriptionText.layer.borderWidth = 1.0
+        descriptionText.layer.cornerRadius = 8
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        descriptionPlaceholder.isHidden = !textView.text.isEmpty
     }
     
     // MARK: - Location handlers
