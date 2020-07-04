@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import CoreData
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UIScrollViewDelegate {
     
     let logoutSegueIdentifier: String = "LogoutSegueIdentifier"
     
@@ -20,6 +20,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var homeAddressLabel: UILabel!
     @IBOutlet weak var alertsSourceSegCtrl: UISegmentedControl!
     @IBOutlet weak var alertsRadiusSegCtrl: UISegmentedControl!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    override func viewDidLoad() {
+        self.scrollView.delegate = self
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         // get user info
