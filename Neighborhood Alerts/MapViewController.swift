@@ -158,6 +158,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             destination.alertImageUrl = selectedAlertLoc?.alert.image
             destination.alertAuthorName = selectedAlertLoc?.alert.authorName
             destination.alertCategory = selectedAlertLoc?.alert.category
+            destination.alertUpvotes = selectedAlertLoc?.alert.upvotes
+            destination.alertId = selectedAlertLoc?.alert.id
         }
     }
 }

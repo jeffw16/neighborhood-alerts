@@ -16,6 +16,8 @@ class DetailedAlertViewController: UIViewController {
     var alertImageUrl: String?
     var alertAuthorName: String?
     var alertCategory: String?
+    var alertUpvotes: Int?
+    var alertId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,5 +56,13 @@ class DetailedAlertViewController: UIViewController {
             }
         }
     }
+    
 
+    @IBAction func thanksButton(_ sender: Any) {
+        alertUpvotes! += 1
+    }
+    
+    @IBAction func fakeNewsButton(_ sender: Any) {
+        alertUpvotes! -= 1
+    }
 }

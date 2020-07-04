@@ -154,6 +154,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             nextVC.alertImageUrl = alertsList[alertIndex].image
             nextVC.alertAuthorName = alertsList[alertIndex].authorName
             nextVC.alertCategory = alertsList[alertIndex].category
+            nextVC.alertUpvotes = alertsList[alertIndex].upvotes
+            nextVC.alertId = alertsList[alertIndex].id
         }
     }
 

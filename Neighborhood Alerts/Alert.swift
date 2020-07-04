@@ -25,8 +25,9 @@ class Alert {
     var authorName: String
     var authorEmail: String
     var created: Timestamp
+    var upvotes: Int // number of upvotes (think Stack Overflow or Reddit)
 
-    init(id: String, displayName: String, description: String, category: String, image: String?, latitude: CLLocationDegrees, longitude: CLLocationDegrees, authorName: String, authorEmail: String, created: Timestamp) {
+    init(id: String, displayName: String, description: String, category: String, image: String?, latitude: CLLocationDegrees, longitude: CLLocationDegrees, authorName: String, authorEmail: String, created: Timestamp, upvotes: Int) {
         self.id = id
         self.displayName = displayName
         self.description = description
@@ -37,6 +38,7 @@ class Alert {
         self.authorName = authorName
         self.authorEmail = authorEmail
         self.created = created
+        self.upvotes = upvotes
     }
     
     // Makes connection to Firebase Firestore and
@@ -63,8 +65,9 @@ class Alert {
                     let authorEmail = data["authorEmail"] as! String
                     let category = data["category"] as! String
                     let created = data["created"] as! Timestamp
-                    let imageStringOpt = data["image"] as? String
+                    let imageStringOpt = data["image"] as! String
                     let location = data["location"] as! GeoPoint
+                    let upvotes = data["upvotes"] as! Int
                     
                     let alertToAdd = Alert(id: id,
                                            displayName: displayName,
@@ -75,7 +78,8 @@ class Alert {
                                            longitude: CLLocationDegrees(location.longitude),
                                            authorName: authorName,
                                            authorEmail: authorEmail,
-                                           created: created)
+                                           created: created,
+                                           upvotes: upvotes)
                     alertsToReturn.append(alertToAdd)
                 }
             }

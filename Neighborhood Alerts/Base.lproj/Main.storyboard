@@ -897,11 +897,17 @@ receive alerts from.</string>
                                 <rect key="frame" x="49" y="735" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Thanks"/>
+                                <connections>
+                                    <action selector="thanksButton:" destination="swH-ZN-HfZ" eventType="touchUpInside" id="bUF-5T-HgO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0P-OW-lah">
                                 <rect key="frame" x="276" y="735" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Fake News"/>
+                                <connections>
+                                    <action selector="fakeNewsButton:" destination="swH-ZN-HfZ" eventType="touchUpInside" id="gJX-Ui-Gec"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-AJ-8Rp">
                                 <rect key="frame" x="20" y="111" width="374" height="33"/>
