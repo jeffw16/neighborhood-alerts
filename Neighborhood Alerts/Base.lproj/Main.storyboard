@@ -557,14 +557,14 @@ email address associated with this account.</string>
             <objects>
                 <viewController id="RHN-SV-4ay" customClass="SettingsViewController" customModule="Neighbor_Alerts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z9K-bJ-G89">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXd-Mn-aXb">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="777"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khb-rM-EgO">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="777"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8K-Wu-4JF">
                                                 <rect key="frame" x="21" y="19" width="372" height="21"/>
@@ -721,10 +721,12 @@ email address associated with this account.</string>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="khb-rM-EgO" firstAttribute="height" secondItem="lXd-Mn-aXb" secondAttribute="height" id="1ck-ma-buu"/>
                                     <constraint firstItem="khb-rM-EgO" firstAttribute="bottom" secondItem="GkS-1H-Pjn" secondAttribute="bottom" id="56U-c8-k7M"/>
                                     <constraint firstAttribute="trailing" secondItem="khb-rM-EgO" secondAttribute="trailing" id="7Of-Tx-R1x"/>
                                     <constraint firstItem="khb-rM-EgO" firstAttribute="centerX" secondItem="lXd-Mn-aXb" secondAttribute="centerX" id="MXN-ZJ-ias"/>
                                     <constraint firstItem="khb-rM-EgO" firstAttribute="top" secondItem="GkS-1H-Pjn" secondAttribute="top" id="RC0-wH-xba"/>
+                                    <constraint firstItem="khb-rM-EgO" firstAttribute="width" secondItem="lXd-Mn-aXb" secondAttribute="width" id="arF-hh-QSc"/>
                                     <constraint firstItem="khb-rM-EgO" firstAttribute="leading" secondItem="lXd-Mn-aXb" secondAttribute="leading" id="m4m-H4-M08"/>
                                     <constraint firstAttribute="bottom" secondItem="khb-rM-EgO" secondAttribute="bottom" id="sJy-92-9iI"/>
                                 </constraints>
@@ -746,12 +748,14 @@ email address associated with this account.</string>
                         <viewLayoutGuide key="safeArea" id="hhH-fr-F99"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="40c-ud-7js"/>
+                    <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="alertsRadiusSegCtrl" destination="7G4-Bq-5mH" id="Oin-vY-kIG"/>
                         <outlet property="alertsSourceSegCtrl" destination="wpL-Jw-v6T" id="hza-3T-fg9"/>
                         <outlet property="emailAddressLabel" destination="p2n-jN-79R" id="vjL-5I-eTD"/>
                         <outlet property="fullNameLabel" destination="Y8K-Wu-4JF" id="k6P-PL-6py"/>
                         <outlet property="homeAddressLabel" destination="Rny-TF-rBe" id="dXH-hK-A5z"/>
+                        <outlet property="scrollView" destination="lXd-Mn-aXb" id="OPl-PT-vdX"/>
                         <segue destination="yi2-EP-Ehw" kind="presentation" identifier="LogoutSegueIdentifier" modalPresentationStyle="fullScreen" id="REM-Eb-MoW"/>
                     </connections>
                 </viewController>
