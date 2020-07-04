@@ -984,6 +984,13 @@ receive alerts from.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upvotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B77-QV-k3U">
+                                <rect key="frame" x="175" y="740" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AsP-Vv-Aac"/>
@@ -995,6 +1002,7 @@ receive alerts from.</string>
                         <outlet property="descriptionLabel" destination="HtO-FQ-Kof" id="MUG-8P-uRv"/>
                         <outlet property="imageView" destination="zgc-ln-A6A" id="lXY-iQ-qi7"/>
                         <outlet property="titleLabel" destination="39S-Fj-8OZ" id="lnD-nW-6Ap"/>
+                        <outlet property="upvotesLabel" destination="B77-QV-k3U" id="Mkg-ks-0FG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiK-27-lxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

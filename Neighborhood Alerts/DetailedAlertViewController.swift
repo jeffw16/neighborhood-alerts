@@ -7,7 +7,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
 import FirebaseStorage
+
+protocol UpdateUpvoteDelegate {
+    func updateUpvote(_ newCount: Int)
+}
 
 class DetailedAlertViewController: UIViewController {
     
@@ -18,6 +23,8 @@ class DetailedAlertViewController: UIViewController {
     var alertCategory: String?
     var alertUpvotes: Int?
     var alertId: String?
+    
+    var originVC: UpdateUpvoteDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +37,7 @@ class DetailedAlertViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var upvotesLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -39,6 +47,7 @@ class DetailedAlertViewController: UIViewController {
         authorLabel.text = "Posted by " + (alertAuthorName ?? "")
         descriptionLabel.text = alertDescription ?? ""
         categoryLabel.text = alertCategory ?? ""
+        upvotesLabel.text = "\(alertUpvotes ?? 0)"
         
         if alertImageUrl != nil {
             // download the image
@@ -60,9 +69,34 @@ class DetailedAlertViewController: UIViewController {
 
     @IBAction func thanksButton(_ sender: Any) {
         alertUpvotes! += 1
+        updateUpvotesLocally()
+        updateUpvotesToDb()
     }
     
     @IBAction func fakeNewsButton(_ sender: Any) {
         alertUpvotes! -= 1
+        updateUpvotesLocally()
+        updateUpvotesToDb()
+    }
+    
+    func updateUpvotesLocally() {
+        if let alertUpvotes = self.alertUpvotes {
+            self.upvotesLabel.text = "\(alertUpvotes)"
+            originVC?.updateUpvote(alertUpvotes)
+        }
+    }
+    
+    func updateUpvotesToDb() {
+        let db = Firestore.firestore()
+        
+        let updateData: [String: Any] = [
+            "upvotes": alertUpvotes!
+        ]
+        
+        let alertDocRef = db.collection("alerts").document(alertId!)
+        alertDocRef.setData(updateData, merge: true) {
+            err in
+            // updated
+        }
     }
 }

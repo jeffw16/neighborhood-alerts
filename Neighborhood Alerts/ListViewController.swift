@@ -12,11 +12,12 @@ import MapKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UpdateUpvoteDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     var alertsList: [Alert] = []
+    var selectedAlert: Alert?
     
     let detailedAlertSegueIdentifier: String = "DetailedAlertSegueIdentifier"
     let alertCellIdentifier: String = "AlertCellIdentifier"
@@ -138,9 +139,16 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedAlert = alertsList[indexPath.row]
         
         tableView.deselectRow(at: indexPath, animated: true)
     
+    }
+    
+    func updateUpvote(_ newCount: Int) {
+        if let selectedAlert = selectedAlert {
+            selectedAlert.upvotes = newCount
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -156,6 +164,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             nextVC.alertCategory = alertsList[alertIndex].category
             nextVC.alertUpvotes = alertsList[alertIndex].upvotes
             nextVC.alertId = alertsList[alertIndex].id
+            nextVC.originVC = self as UpdateUpvoteDelegate
         }
     }
 
