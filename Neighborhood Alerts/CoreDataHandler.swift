@@ -37,10 +37,7 @@ class CoreDataHandler {
         return nsManagedObjects[0]
     }
     
-    static func fetchUserLocalData(email: String) -> [String: Any?] {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var context = appDelegate.persistentContainer.viewContext
-        
+    static func fetchUserLocalData(email: String, context: inout NSManagedObjectContext) -> [String: Any?] {
         let fetchedResult = fetchUserLocalDataNSManagedObject(email, context: &context)
         
         guard let resultData = fetchedResult else {
@@ -52,20 +49,19 @@ class CoreDataHandler {
         return result
     }
     
-    static func storeUserLocalData(email: String, key: String, value: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var context = appDelegate.persistentContainer.viewContext
-        
+    static func storeUserLocalData(email: String, context: inout NSManagedObjectContext, key: String, value: Any) {
         var nsManagedObject = CoreDataHandler.fetchUserLocalDataNSManagedObject(email, context: &context)
         
         if nsManagedObject == nil {
             // create a new object
             nsManagedObject = NSEntityDescription.insertNewObject(forEntityName: userLocalDataName, into: context)
+            nsManagedObject!.setValue(email, forKey: "emailAddress")
         }
-            
+        
         nsManagedObject!.setValue(value, forKey: key)
         
-        context.refresh(nsManagedObject!, mergeChanges: true)
+        context.delete(nsManagedObject!)
+        context.insert(nsManagedObject!)
         
         do {
             try context.save()

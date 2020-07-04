@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import CoreData
 
 class SettingsViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var emailAddressLabel: UILabel!
     @IBOutlet weak var homeAddressLabel: UILabel!
     @IBOutlet weak var alertsSourceSegCtrl: UISegmentedControl!
+    @IBOutlet weak var alertsRadiusSegCtrl: UISegmentedControl!
     
     override func viewWillAppear(_ animated: Bool) {
         // get user info
@@ -40,11 +42,62 @@ class SettingsViewController: UIViewController {
                     }
                 }
                 // retrieve user local data from Core Data
-                let userLocalData = CoreDataHandler.fetchUserLocalData(email: email)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserLocalData")
+                
+                var fetchedResults: [NSManagedObject]? = nil
+                
+                let predicate = NSPredicate(format: "emailAddress CONTAINS[c] '\(email)'")
+                request.predicate = predicate
+                
+                do {
+                    try fetchedResults = context.fetch(request) as? [NSManagedObject]
+                } catch {
+                    let nsError = error as NSError
+                    NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
+                }
+                
+                if let nsManagedObjects = fetchedResults {
+                    if nsManagedObjects.count != 1 {
+                        print("Found \(nsManagedObjects.count) results")
+                        for obj in nsManagedObjects {
+                            context.delete(obj)
+                        }
+                        do {
+                            try context.save()
+                        } catch {
+                            let nsError = error as NSError
+                            NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
+                        }
+                    } else {
+                        let nsManagedObject = nsManagedObjects[0]
+                        
+                        let locationBasedAlertsVal = nsManagedObject.value(forKey: "locationBasedAlerts")
+                        
+                        if let locationBasedAlerts = locationBasedAlertsVal {
+                            if locationBasedAlerts as! Bool {
+                                alertsSourceSegCtrl.selectedSegmentIndex = 0
+                                print("Set to 0")
+                            } else {
+                                alertsSourceSegCtrl.selectedSegmentIndex = 1
+                                print("Set to 1")
+                            }
+                        }
+                    }
+                }
+                
+                /*
+                let userLocalData = CoreDataHandler.fetchUserLocalData(email: email, context: &context)
                 if userLocalData.count != 0 {
                     // don't use the defaults if we have Core Data stored that says otherwise
                     alertsSourceSegCtrl.selectedSegmentIndex = (userLocalData["locationBasedAlerts"] != nil && userLocalData["locationBasedAlerts"] as! Bool == true) ? 0 : 1
+                    print("Location based alerts data: \(String(describing: userLocalData["locationBasedAlerts"]))")
+                } else {
+                    print("Data does not exist")
                 }
+                 */
             } else {
                 emailAddressLabel!.text = "Email address: Unknown"
             }
@@ -52,9 +105,27 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func setAlertSource(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var context = appDelegate.persistentContainer.viewContext
         let user = Auth.auth().currentUser
         if let email = user?.email {
-            CoreDataHandler.storeUserLocalData(email: email, key: "locationBasedAlerts", value: alertsSourceSegCtrl.selectedSegmentIndex == 0)
+            CoreDataHandler.storeUserLocalData(email: email, context: &context, key: "locationBasedAlerts", value: alertsSourceSegCtrl.selectedSegmentIndex == 0)
+            
+            let entity = NSEntityDescription.entity(forEntityName: "UserLocalData", in: context)!
+            let nsManagedObject = NSManagedObject(entity: entity, insertInto: context)
+            nsManagedObject.setValue(email, forKey: "emailAddress")
+            nsManagedObject.setValue(alertsSourceSegCtrl.selectedSegmentIndex == 0, forKey: "locationBasedAlerts")
+            
+//            context.insert(nsManagedObject)
+            
+            do {
+                try context.save()
+            } catch {
+                let nsError = error as NSError
+                NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+            
+            print("Set alert source to \(alertsSourceSegCtrl.selectedSegmentIndex)")
         }
     }
     
