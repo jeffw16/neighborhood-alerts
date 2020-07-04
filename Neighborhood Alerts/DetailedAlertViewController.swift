@@ -44,7 +44,7 @@ class DetailedAlertViewController: UIViewController {
             // download the image
             let imageRef = Storage.storage().reference().child(alertImageUrl!)
             
-            imageRef.getData(maxSize: 20 * 1024 * 1024) {
+            imageRef.getData(maxSize: 30 * 1024 * 1024) {
                 (data, error) in
                 
                 if error == nil {

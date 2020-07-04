@@ -190,7 +190,8 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
                     "created": Timestamp(),
                     "description": self.descriptionText.text!,
                     "displayName": alertDisplayName,
-                    "location": location
+                    "location": location,
+                    "upvotes": 0
                 ]
                 
                 // create a UUID for our new location
