@@ -14,6 +14,10 @@ protocol UpdateUpvoteDelegate {
     func updateUpvote(_ newCount: Int)
 }
 
+protocol ResolveAlertDelegate {
+    func resolveAlert()
+}
+
 class DetailedAlertViewController: UIViewController {
     
     var alertTitle: String?
@@ -24,7 +28,7 @@ class DetailedAlertViewController: UIViewController {
     var alertUpvotes: Int?
     var alertId: String?
     
-    var originVC: UpdateUpvoteDelegate?
+    var originVC: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,12 +73,31 @@ class DetailedAlertViewController: UIViewController {
 
     @IBAction func thanksButton(_ sender: Any) {
         alertUpvotes! += 1
-        updateUpvotesLocally()
-        updateUpvotesToDb()
+        updateUpvotes()
     }
     
     @IBAction func fakeNewsButton(_ sender: Any) {
         alertUpvotes! -= 1
+        updateUpvotes()
+    }
+    
+    @IBAction func markResolved(_ sender: Any) {
+        (originVC as? ResolveAlertDelegate)?.resolveAlert()
+        
+        let db = Firestore.firestore()
+        
+        let updateData: [String: Any] = [
+            "resolved": true
+        ]
+        
+        let alertDocRef = db.collection("alerts").document(alertId!)
+        alertDocRef.setData(updateData, merge: true) {
+            err in
+            // updated
+        }
+    }
+    
+    func updateUpvotes() {
         updateUpvotesLocally()
         updateUpvotesToDb()
     }
@@ -82,7 +105,7 @@ class DetailedAlertViewController: UIViewController {
     func updateUpvotesLocally() {
         if let alertUpvotes = self.alertUpvotes {
             self.upvotesLabel.text = "\(alertUpvotes)"
-            originVC?.updateUpvote(alertUpvotes)
+            (originVC as? UpdateUpvoteDelegate)?.updateUpvote(alertUpvotes)
         }
     }
     

@@ -26,8 +26,9 @@ class Alert {
     var authorEmail: String
     var created: Timestamp
     var upvotes: Int // number of upvotes (think Stack Overflow or Reddit)
+    var resolved: Bool
 
-    init(id: String, displayName: String, description: String, category: String, image: String?, latitude: CLLocationDegrees, longitude: CLLocationDegrees, authorName: String, authorEmail: String, created: Timestamp, upvotes: Int) {
+    init(id: String, displayName: String, description: String, category: String, image: String?, latitude: CLLocationDegrees, longitude: CLLocationDegrees, authorName: String, authorEmail: String, created: Timestamp, upvotes: Int, resolved: Bool = false) {
         self.id = id
         self.displayName = displayName
         self.description = description
@@ -39,6 +40,7 @@ class Alert {
         self.authorEmail = authorEmail
         self.created = created
         self.upvotes = upvotes
+        self.resolved = resolved
     }
     
     // Makes connection to Firebase Firestore and
@@ -49,7 +51,10 @@ class Alert {
         
         let db = Firestore.firestore()
         let alertsRef = db.collection("alerts")
-        let filteredRef = alertsRef.order(by: "created", descending: true).limit(to: 10)
+        let filteredRef = alertsRef
+            .whereField("resolved", isEqualTo: false)
+            .order(by: "created", descending: true)
+            .limit(to: 10)
         
         filteredRef.getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -68,6 +73,7 @@ class Alert {
                     let imageStringOpt = data["image"] as? String
                     let location = data["location"] as! GeoPoint
                     let upvotes = data["upvotes"] as? Int
+                    let resolved = data["resolved"] as? Bool
                     
                     let alertToAdd = Alert(id: id,
                                            displayName: displayName,
@@ -79,7 +85,8 @@ class Alert {
                                            authorName: authorName,
                                            authorEmail: authorEmail,
                                            created: created,
-                                           upvotes: upvotes ?? 0)
+                                           upvotes: upvotes ?? 0,
+                                           resolved: resolved ?? false)
                     alertsToReturn.append(alertToAdd)
                 }
             }

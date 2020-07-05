@@ -12,7 +12,7 @@ import MapKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UpdateUpvoteDelegate {
+class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UpdateUpvoteDelegate, ResolveAlertDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -151,6 +151,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func resolveAlert() {
+        if let selectedAlert = selectedAlert {
+            selectedAlert.resolved = true
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == detailedAlertSegueIdentifier {
             let nextVC = segue.destination as! DetailedAlertViewController
@@ -164,7 +170,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             nextVC.alertCategory = alertsList[alertIndex].category
             nextVC.alertUpvotes = alertsList[alertIndex].upvotes
             nextVC.alertId = alertsList[alertIndex].id
-            nextVC.originVC = self as UpdateUpvoteDelegate
+            nextVC.originVC = self
         }
     }
 

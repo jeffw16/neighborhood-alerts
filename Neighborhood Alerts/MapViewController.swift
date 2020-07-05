@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import FirebaseFirestore
 
-class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelegate, ResolveAlertDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -155,6 +155,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
         }
     }
     
+    func resolveAlert() {
+        if let selectedAlertLoc = self.selectedAlertLoc {
+            selectedAlertLoc.alert.resolved = true
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == mapToDetailedAlertViewSegueIdentifier,
             let destination = segue.destination as? DetailedAlertViewController {
@@ -165,7 +171,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
             destination.alertCategory = selectedAlertLoc?.alert.category
             destination.alertUpvotes = selectedAlertLoc?.alert.upvotes
             destination.alertId = selectedAlertLoc?.alert.id
-            destination.originVC = self as UpdateUpvoteDelegate
+            destination.originVC = self
         }
     }
 }
