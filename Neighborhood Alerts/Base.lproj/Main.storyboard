@@ -428,57 +428,49 @@ email address associated with this account.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jB7-Nk-EGX">
                                         <rect key="frame" x="0.0" y="0.0" width="416" height="769"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alert category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5i-Rm-LqW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5i-Rm-LqW">
                                                 <rect key="frame" x="21" y="8" width="374" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of alert" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7a-Pn-oAR">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of alert" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7a-Pn-oAR">
                                                 <rect key="frame" x="69" y="52" width="278" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYb-5u-rf5">
-                                                <rect key="frame" x="157" y="106" width="102" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYb-5u-rf5">
+                                                <rect key="frame" x="69" y="106" width="278" height="30"/>
                                                 <state key="normal" title="Select location"/>
                                                 <connections>
                                                     <action selector="selectLocation:" destination="9EJ-Yd-kBt" eventType="touchUpInside" id="bcl-84-OWq"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-2R-Hm0">
-                                                <rect key="frame" x="164" y="154" width="88" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-2R-Hm0">
+                                                <rect key="frame" x="69" y="154" width="278" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WkP-vC-vQb">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WkP-vC-vQb">
                                                 <rect key="frame" x="21" y="189" width="374" height="121"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-vl-igH">
-                                                <rect key="frame" x="171" y="371" width="74" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-vl-igH">
+                                                <rect key="frame" x="69" y="371" width="278" height="30"/>
                                                 <state key="normal" title="Add Image"/>
                                                 <connections>
                                                     <action selector="addImageButtonPressed:" destination="9EJ-Yd-kBt" eventType="touchUpInside" id="efu-Wo-bVB"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-56-WEC">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-56-WEC">
                                                 <rect key="frame" x="8" y="407" width="400" height="361"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-W8-zzN">
-                                                <rect key="frame" x="165" y="318" width="86" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-W8-zzN">
+                                                <rect key="frame" x="69" y="318" width="278" height="30"/>
                                                 <state key="normal" title="Publish alert"/>
                                                 <connections>
                                                     <action selector="publishAlert:" destination="9EJ-Yd-kBt" eventType="touchUpInside" id="Syd-Md-7mN"/>
@@ -493,6 +485,25 @@ email address associated with this account.</string>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="m6n-56-WEC" secondAttribute="trailing" constant="8" id="1a2-lY-kUM"/>
+                                            <constraint firstItem="aYb-5u-rf5" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="3WE-gX-Dpo"/>
+                                            <constraint firstAttribute="trailing" secondItem="gfp-2R-Hm0" secondAttribute="trailing" constant="69" id="5EZ-jQ-Gwb"/>
+                                            <constraint firstItem="m6n-56-WEC" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="8" id="AwM-GR-60c"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Rh-W8-zzN" secondAttribute="trailing" constant="69" id="DN6-Sb-XlI"/>
+                                            <constraint firstItem="gfp-2R-Hm0" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="E2J-pN-D9P"/>
+                                            <constraint firstAttribute="trailing" secondItem="aYb-5u-rf5" secondAttribute="trailing" constant="69" id="QiF-EM-Lep"/>
+                                            <constraint firstItem="m6n-56-WEC" firstAttribute="top" secondItem="C5i-Rm-LqW" secondAttribute="bottom" constant="378" id="Xil-Kb-28B"/>
+                                            <constraint firstItem="1Rh-W8-zzN" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="cxR-5I-OXn"/>
+                                            <constraint firstItem="p7a-Pn-oAR" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="dEh-FK-Qbm"/>
+                                            <constraint firstAttribute="trailing" secondItem="WkP-vC-vQb" secondAttribute="trailing" constant="21" id="dTa-0Q-KFf"/>
+                                            <constraint firstItem="WkP-vC-vQb" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="21" id="km4-Tq-kHQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="KDU-vl-igH" secondAttribute="trailing" constant="69" id="mbx-Qb-We9"/>
+                                            <constraint firstAttribute="trailing" secondItem="p7a-Pn-oAR" secondAttribute="trailing" constant="69" id="rEp-nc-uZV"/>
+                                            <constraint firstAttribute="trailing" secondItem="C5i-Rm-LqW" secondAttribute="trailing" constant="21" id="sVH-Dy-9qr"/>
+                                            <constraint firstItem="C5i-Rm-LqW" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="21" id="uQR-Za-wy3"/>
+                                            <constraint firstItem="KDU-vl-igH" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="y5a-ff-BGW"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -511,7 +522,14 @@ email address associated with this account.</string>
                         <constraints>
                             <constraint firstItem="nHV-Ku-UzI" firstAttribute="leading" secondItem="ppn-W5-PMC" secondAttribute="leading" id="3HB-LG-kbn"/>
                             <constraint firstItem="nHV-Ku-UzI" firstAttribute="bottom" secondItem="ppn-W5-PMC" secondAttribute="bottom" id="4EC-iA-rft"/>
+                            <constraint firstItem="aYb-5u-rf5" firstAttribute="top" secondItem="ppn-W5-PMC" secondAttribute="top" constant="106" id="7lp-DW-ws3"/>
+                            <constraint firstItem="WkP-vC-vQb" firstAttribute="top" secondItem="ppn-W5-PMC" secondAttribute="top" constant="189" id="B1I-Cn-01d"/>
+                            <constraint firstItem="KDU-vl-igH" firstAttribute="top" secondItem="ppn-W5-PMC" secondAttribute="top" constant="371" id="Eok-5g-fXF"/>
                             <constraint firstItem="nHV-Ku-UzI" firstAttribute="trailing" secondItem="ppn-W5-PMC" secondAttribute="trailing" id="MSf-jG-dL3"/>
+                            <constraint firstItem="C5i-Rm-LqW" firstAttribute="top" secondItem="ppn-W5-PMC" secondAttribute="top" constant="8" id="W3O-zH-p8a"/>
+                            <constraint firstItem="gfp-2R-Hm0" firstAttribute="top" secondItem="ppn-W5-PMC" secondAttribute="top" constant="154" id="XNz-uC-zoN"/>
+                            <constraint firstItem="1Rh-W8-zzN" firstAttribute="top" secondItem="ppn-W5-PMC" secondAttribute="top" constant="318" id="g9q-xP-I9P"/>
+                            <constraint firstItem="p7a-Pn-oAR" firstAttribute="top" secondItem="ppn-W5-PMC" secondAttribute="top" constant="52" id="gUi-4S-zyA"/>
                             <constraint firstItem="nHV-Ku-UzI" firstAttribute="top" secondItem="ppn-W5-PMC" secondAttribute="top" id="szY-v3-e7o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ppn-W5-PMC"/>
