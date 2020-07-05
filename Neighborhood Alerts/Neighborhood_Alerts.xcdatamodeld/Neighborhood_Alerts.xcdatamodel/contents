@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="UserLocalData" representedClassName="UserLocalData" syncable="YES" codeGenerationType="class">
         <attribute name="alertsRadius" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="darkMode" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="emailAddress" optional="YES" attributeType="String"/>
         <attribute name="locationBasedAlerts" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="pushNotifs" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="UserLocalData" positionX="-54" positionY="-9" width="128" height="88"/>
+        <element name="UserLocalData" positionX="-54" positionY="-9" width="128" height="118"/>
     </elements>
 </model>

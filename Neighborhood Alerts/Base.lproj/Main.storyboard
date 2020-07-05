@@ -663,6 +663,9 @@ email address associated with this account.</string>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XOo-Z7-nJQ">
                                                 <rect key="frame" x="22" y="163" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="setPushNotifs:" destination="RHN-SV-4ay" eventType="valueChanged" id="Afe-4M-H3S"/>
+                                                </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSK-NU-TAt">
                                                 <rect key="frame" x="91" y="168" width="137" height="21"/>
@@ -670,23 +673,14 @@ email address associated with this account.</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="URn-M8-Nsi">
-                                                <rect key="frame" x="22" y="207" width="51" height="31"/>
-                                            </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS ($1.99/mo)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJK-UV-gNX">
-                                                <rect key="frame" x="91" y="212" width="124" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See alerts from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-Gn-i1K">
-                                                <rect key="frame" x="22" y="270" width="171" height="29"/>
+                                                <rect key="frame" x="22" y="292" width="171" height="29"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wpL-Jw-v6T">
-                                                <rect key="frame" x="20" y="303" width="373" height="32"/>
+                                                <rect key="frame" x="20" y="330" width="373" height="32"/>
                                                 <segments>
                                                     <segment title="My location"/>
                                                     <segment title="My address"/>
@@ -696,13 +690,13 @@ email address associated with this account.</string>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See alerts within" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF4-4U-Iuf">
-                                                <rect key="frame" x="20" y="362" width="187" height="29"/>
+                                                <rect key="frame" x="20" y="375" width="187" height="29"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="7G4-Bq-5mH">
-                                                <rect key="frame" x="20" y="399" width="373" height="32"/>
+                                                <rect key="frame" x="20" y="414" width="373" height="32"/>
                                                 <segments>
                                                     <segment title="1 mile"/>
                                                     <segment title="2 miles"/>
@@ -747,44 +741,64 @@ email address associated with this account.</string>
                                                     <action selector="logoutAction:" destination="RHN-SV-4ay" eventType="touchUpInside" id="Mlo-AA-Ffd"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF8-z1-Dgf">
+                                                <rect key="frame" x="20" y="213" width="185" height="29"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-VX-EIE">
+                                                <rect key="frame" x="20" y="250" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="setDarkMode:" destination="RHN-SV-4ay" eventType="valueChanged" id="l1O-Yw-Q1A"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOq-i3-mPq">
+                                                <rect key="frame" x="92" y="255" width="84" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="gl1-Jp-AtX" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="00Q-sa-044"/>
-                                            <constraint firstItem="wpL-Jw-v6T" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="303" id="18z-qD-69G"/>
                                             <constraint firstItem="XOo-Z7-nJQ" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="3Ht-zL-HZ8"/>
-                                            <constraint firstItem="dpP-Gn-i1K" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="270" id="6et-KT-ZL7"/>
+                                            <constraint firstItem="dpP-Gn-i1K" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="292" id="6m0-oG-dIH"/>
                                             <constraint firstItem="TBu-qg-qBO" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="9TS-u5-GG2"/>
                                             <constraint firstAttribute="trailing" secondItem="wpL-Jw-v6T" secondAttribute="trailing" constant="21" id="9qK-TW-K7j"/>
-                                            <constraint firstItem="7G4-Bq-5mH" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="399" id="CsV-fY-ehR"/>
                                             <constraint firstItem="gl1-Jp-AtX" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="508" id="FY4-C9-fHW"/>
                                             <constraint firstAttribute="height" constant="777" id="GzR-pL-edu"/>
                                             <constraint firstItem="yWN-0n-Cmm" firstAttribute="centerX" secondItem="khb-rM-EgO" secondAttribute="centerX" id="H4X-cA-b6P"/>
-                                            <constraint firstItem="URn-M8-Nsi" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="207" id="I3p-Cn-NAu"/>
+                                            <constraint firstItem="qOq-i3-mPq" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="92" id="NGZ-nH-9ZO"/>
+                                            <constraint firstItem="H7Y-VX-EIE" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="250" id="O4F-iy-ggf"/>
+                                            <constraint firstItem="wpL-Jw-v6T" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="330" id="QSB-eB-jsl"/>
                                             <constraint firstItem="nSK-NU-TAt" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="168" id="StX-Rp-rMA"/>
                                             <constraint firstItem="Rny-TF-rBe" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="77" id="Tua-Fj-7tl"/>
                                             <constraint firstItem="p2n-jN-79R" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="48" id="UlS-Jy-gdD"/>
+                                            <constraint firstItem="yF4-4U-Iuf" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="375" id="ZGm-8o-eor"/>
                                             <constraint firstItem="7G4-Bq-5mH" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="ZtQ-Xk-rah"/>
-                                            <constraint firstItem="mJK-UV-gNX" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="91" id="aGB-mf-yi8"/>
                                             <constraint firstItem="Rny-TF-rBe" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21" id="aUf-kQ-y45"/>
                                             <constraint firstItem="yF4-4U-Iuf" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="axz-VV-mQg"/>
                                             <constraint firstItem="nSK-NU-TAt" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="91" id="bXr-39-hkF"/>
+                                            <constraint firstItem="7G4-Bq-5mH" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="414" id="eyI-u5-Y8L"/>
                                             <constraint firstItem="p2n-jN-79R" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21.5" id="gkp-RD-gay"/>
                                             <constraint firstItem="wpL-Jw-v6T" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="hsZ-3J-Ny2"/>
+                                            <constraint firstItem="qOq-i3-mPq" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="255" id="i9D-jy-Prg"/>
+                                            <constraint firstItem="HF8-z1-Dgf" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="iZk-eG-96m"/>
                                             <constraint firstAttribute="trailing" secondItem="7G4-Bq-5mH" secondAttribute="trailing" constant="21" id="l57-GW-fBD"/>
                                             <constraint firstItem="HrQ-5M-vkX" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="mDF-c4-deB"/>
                                             <constraint firstItem="Y8K-Wu-4JF" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="19" id="nsR-54-iHy"/>
+                                            <constraint firstItem="H7Y-VX-EIE" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="oB1-MT-pNp"/>
                                             <constraint firstItem="fln-jm-bU5" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="ptB-mO-7a0"/>
                                             <constraint firstItem="HrQ-5M-vkX" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="471" id="rA5-gM-TPt"/>
                                             <constraint firstItem="XOo-Z7-nJQ" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="163" id="sdg-Nb-YVa"/>
                                             <constraint firstItem="TBu-qg-qBO" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="126" id="tLD-OZ-35d"/>
-                                            <constraint firstItem="yF4-4U-Iuf" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="362" id="u69-qV-3Vo"/>
                                             <constraint firstItem="dpP-Gn-i1K" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="uwu-3S-JsE"/>
-                                            <constraint firstItem="mJK-UV-gNX" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="212" id="wKl-jQ-Gox"/>
                                             <constraint firstItem="Y8K-Wu-4JF" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21" id="wb7-eh-mlG"/>
                                             <constraint firstItem="fln-jm-bU5" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="540" id="xKi-tZ-Klh"/>
-                                            <constraint firstItem="URn-M8-Nsi" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="z2p-Yv-LYo"/>
                                             <constraint firstItem="yWN-0n-Cmm" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="690" id="ziH-Dg-gzo"/>
+                                            <constraint firstItem="HF8-z1-Dgf" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="213" id="zsd-Qn-gWD"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -814,9 +828,11 @@ email address associated with this account.</string>
                     <connections>
                         <outlet property="alertsRadiusSegCtrl" destination="7G4-Bq-5mH" id="Oin-vY-kIG"/>
                         <outlet property="alertsSourceSegCtrl" destination="wpL-Jw-v6T" id="hza-3T-fg9"/>
+                        <outlet property="darkModeSwitch" destination="H7Y-VX-EIE" id="QLf-Qd-qQC"/>
                         <outlet property="emailAddressLabel" destination="p2n-jN-79R" id="vjL-5I-eTD"/>
                         <outlet property="fullNameLabel" destination="Y8K-Wu-4JF" id="k6P-PL-6py"/>
                         <outlet property="homeAddressLabel" destination="Rny-TF-rBe" id="dXH-hK-A5z"/>
+                        <outlet property="pushNotifsSwitch" destination="XOo-Z7-nJQ" id="jsx-Tb-ZHf"/>
                         <outlet property="scrollView" destination="lXd-Mn-aXb" id="OPl-PT-vdX"/>
                         <segue destination="yi2-EP-Ehw" kind="presentation" identifier="LogoutSegueIdentifier" modalPresentationStyle="fullScreen" id="REM-Eb-MoW"/>
                     </connections>

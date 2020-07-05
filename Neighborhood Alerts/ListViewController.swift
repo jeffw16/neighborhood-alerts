@@ -23,7 +23,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let detailedAlertSegueIdentifier: String = "DetailedAlertSegueIdentifier"
     let alertCellIdentifier: String = "AlertCellIdentifier"
     let locationManager = CLLocationManager()
-    let resultRadius = 40233.6 // 25 miles converted to meters
+    let resultRadii: [Int: Double] = [1: 1609.344,
+                                      2: 3218.688,
+                                      10: 16093.44,
+                                      25: 40233.6,
+                                      50: 80467.2] // miles converted to meters
+    var resultRadius: Double = 40233.6
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +37,21 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let user = Auth.auth().currentUser
+        guard let email = user?.email else { return }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var context = appDelegate.persistentContainer.viewContext
+        
+        let chosenRadiusInMiles: Int = (CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "alertsRadius") ?? 25) as! Int
+        
+        self.resultRadius = resultRadii[chosenRadiusInMiles] ?? 40233.6
+        
         Alert.loadAlerts() { alertsToAdd in
+            let alertsSourceFromLocation: Bool = (CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "locationBasedAlerts") ?? true) as! Bool
+            
             // refreshing alerts
-            if self.locationManager.location != nil {
+            if self.locationManager.location != nil && alertsSourceFromLocation {
                 self.filterAlertsWithinCurrentLocation(alerts: alertsToAdd) { alertsFiltered in
                     self.alertsList = alertsFiltered
                     // refresh table view to show new data
@@ -73,7 +90,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     // filter by the home address the user has stored
-    // should only be used as a backup when the user has disabled Location Services
     func filterAlertsWithinUserAddress(alerts: [Alert], completion: @escaping ([Alert]) -> ()) {
         // get user info
         let user = Auth.auth().currentUser
