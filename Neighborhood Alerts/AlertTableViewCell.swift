@@ -12,6 +12,7 @@ class AlertTableViewCell: UITableViewCell {
     @IBOutlet weak var alertTitle: UILabel!
     @IBOutlet weak var alertDescription: UILabel!
     @IBOutlet weak var alertImage: UIImageView!
+    @IBOutlet weak var loadIcon: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

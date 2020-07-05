@@ -75,12 +75,17 @@
                                                     <rect key="frame" x="8" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-hu-5l2">
+                                                    <rect key="frame" x="46" y="38" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="alertDescription" destination="f35-AS-gxu" id="gIw-UT-q7G"/>
                                             <outlet property="alertImage" destination="55K-wD-ofe" id="e9s-Ze-fkd"/>
                                             <outlet property="alertTitle" destination="2vI-ih-sj6" id="911-50-xOn"/>
+                                            <outlet property="loadIcon" destination="6l8-hu-5l2" id="9b6-Ik-WSG"/>
                                             <segue destination="swH-ZN-HfZ" kind="show" identifier="DetailedAlertSegueIdentifier" id="0gY-iJ-9Kk"/>
                                         </connections>
                                     </tableViewCell>
@@ -1051,6 +1056,10 @@ receive alerts from.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="aQE-Gr-SVu">
+                                <rect key="frame" x="181" y="323" width="53" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AsP-Vv-Aac"/>
@@ -1061,6 +1070,7 @@ receive alerts from.</string>
                         <outlet property="categoryLabel" destination="sjz-AJ-8Rp" id="kHN-o8-mJB"/>
                         <outlet property="descriptionLabel" destination="HtO-FQ-Kof" id="MUG-8P-uRv"/>
                         <outlet property="imageView" destination="zgc-ln-A6A" id="lXY-iQ-qi7"/>
+                        <outlet property="loadIcon" destination="aQE-Gr-SVu" id="CfA-MV-3kQ"/>
                         <outlet property="titleLabel" destination="39S-Fj-8OZ" id="lnD-nW-6Ap"/>
                         <outlet property="upvotesLabel" destination="B77-QV-k3U" id="Mkg-ks-0FG"/>
                     </connections>

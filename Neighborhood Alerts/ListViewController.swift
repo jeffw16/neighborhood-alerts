@@ -147,10 +147,14 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 if error == nil {
                     // got the image, set it
                     cell.alertImage.image = UIImage(data: data!)
+                    cell.loadIcon.stopAnimating()
                 } else {
                     print(error!)
                 }
             }
+        } else {
+            // if there's no image, don't add a loading icon
+            cell.loadIcon.stopAnimating()
         }
         
 //        cell.textLabel?.text = alertsList[rowNum].displayName
