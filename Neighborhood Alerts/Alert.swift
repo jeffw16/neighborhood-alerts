@@ -65,21 +65,21 @@ class Alert {
                     let authorEmail = data["authorEmail"] as! String
                     let category = data["category"] as! String
                     let created = data["created"] as! Timestamp
-                    let imageStringOpt = data["image"] as! String
+                    let imageStringOpt = data["image"] as? String
                     let location = data["location"] as! GeoPoint
-                    let upvotes = data["upvotes"] as! Int
+                    let upvotes = data["upvotes"] as? Int
                     
                     let alertToAdd = Alert(id: id,
                                            displayName: displayName,
                                            description: description,
                                            category: category,
-                                           image: nil,
+                                           image: imageStringOpt,
                                            latitude: CLLocationDegrees(location.latitude),
                                            longitude: CLLocationDegrees(location.longitude),
                                            authorName: authorName,
                                            authorEmail: authorEmail,
                                            created: created,
-                                           upvotes: upvotes)
+                                           upvotes: upvotes ?? 0)
                     alertsToReturn.append(alertToAdd)
                 }
             }
