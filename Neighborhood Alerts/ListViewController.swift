@@ -11,6 +11,7 @@ import CoreLocation
 import MapKit
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UpdateUpvoteDelegate, ResolveAlertDelegate {
 
@@ -129,11 +130,30 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: alertCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: alertCellIdentifier, for: indexPath) as! AlertTableViewCell
         
         let rowNum = indexPath.row
         
-        cell.textLabel?.text = alertsList[rowNum].displayName
+        cell.alertTitle.text = alertsList[rowNum].displayName
+        cell.alertDescription.text = alertsList[rowNum].description
+        
+        if let alertImageUrl = alertsList[rowNum].image {
+            // download the image
+            let imageRef = Storage.storage().reference().child(alertImageUrl)
+            
+            imageRef.getData(maxSize: 30 * 1024 * 1024) {
+                (data, error) in
+                
+                if error == nil {
+                    // got the image, set it
+                    cell.alertImage.image = UIImage(data: data!)
+                } else {
+                    print(error!)
+                }
+            }
+        }
+        
+//        cell.textLabel?.text = alertsList[rowNum].displayName
         
         return cell
     }
