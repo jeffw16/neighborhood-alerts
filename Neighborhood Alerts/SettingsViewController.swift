@@ -90,6 +90,27 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
                                 print("Set to 1")
                             }
                         }
+                        
+                        
+                        let alertsRadiusVal = nsManagedObject.value(forKey: "alertsRadius")
+                        
+                        if let alertsRadius = alertsRadiusVal{
+                            if alertsRadius as! Int == 1 {
+                                alertsRadiusSegCtrl.selectedSegmentIndex = 0
+                            }
+                            else if alertsRadius as! Int == 2 {
+                                alertsRadiusSegCtrl.selectedSegmentIndex = 1
+                            }
+                            else if alertsRadius as! Int == 10 {
+                                alertsRadiusSegCtrl.selectedSegmentIndex = 2
+                            }
+                            else if alertsRadius as! Int == 25 {
+                                alertsRadiusSegCtrl.selectedSegmentIndex = 3
+                            }
+                            else if alertsRadius as! Int == 50 {
+                                alertsRadiusSegCtrl.selectedSegmentIndex = 4
+                            }
+                        }
                     }
                 }
                 
@@ -110,6 +131,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func setAlertSource(_ sender: Any) {
+        print ("HERE1")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         var context = appDelegate.persistentContainer.viewContext
         let user = Auth.auth().currentUser
@@ -133,6 +155,33 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
             print("Set alert source to \(alertsSourceSegCtrl.selectedSegmentIndex)")
         }
     }
+    
+    @IBAction func setAlertRadius(_ sender: Any) {
+        print ("HERE2")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                var context = appDelegate.persistentContainer.viewContext
+                let user = Auth.auth().currentUser
+                if let email = user?.email {
+                    CoreDataHandler.storeUserLocalData(email: email, context: &context, key: "alertsRadius", value: alertsRadiusSegCtrl.selectedSegmentIndex == 0)
+                    
+                    let entity = NSEntityDescription.entity(forEntityName: "UserLocalData", in: context)!
+                    let nsManagedObject = NSManagedObject(entity: entity, insertInto: context)
+                    nsManagedObject.setValue(email, forKey: "emailAddress")
+                    nsManagedObject.setValue(alertsRadiusSegCtrl.selectedSegmentIndex == 0, forKey: "alertsRadius")
+                    
+        //            context.insert(nsManagedObject)
+                    
+                    do {
+                        try context.save()
+                    } catch {
+                        let nsError = error as NSError
+                        NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
+                    }
+                    
+                    //print("Set alert radius to \(alertsRadiusSegCtrl.selectedSegmentIndex)")
+        }
+    }
+    
     
     @IBAction func logoutAction(_ sender: Any) {
         // perform log out actions

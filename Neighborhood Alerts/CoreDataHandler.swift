@@ -50,12 +50,16 @@ class CoreDataHandler {
     }
     
     static func storeUserLocalData(email: String, context: inout NSManagedObjectContext, key: String, value: Any) {
+        print ("in storeuserlocaldata")
         var nsManagedObject = CoreDataHandler.fetchUserLocalDataNSManagedObject(email, context: &context)
         
         if nsManagedObject == nil {
             // create a new object
             nsManagedObject = NSEntityDescription.insertNewObject(forEntityName: userLocalDataName, into: context)
             nsManagedObject!.setValue(email, forKey: "emailAddress")
+        }
+        else{
+            print ("not nil")
         }
         
         nsManagedObject!.setValue(value, forKey: key)
@@ -66,9 +70,10 @@ class CoreDataHandler {
         do {
             try context.save()
         } catch {
+            print ("ah shit an error")
             let nsError = error as NSError
             NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-    
+
 }
