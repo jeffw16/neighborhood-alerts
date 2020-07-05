@@ -42,6 +42,7 @@ class DetailedAlertViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var upvotesLabel: UILabel!
+    @IBOutlet weak var loadIcon: UIActivityIndicatorView!
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -63,10 +64,13 @@ class DetailedAlertViewController: UIViewController {
                 if error == nil {
                     // got the image, set it
                     self.imageView.image = UIImage(data: data!)
+                    self.loadIcon.stopAnimating()
                 } else {
                     print(error!)
                 }
             }
+        } else {
+            self.loadIcon.stopAnimating()
         }
     }
     

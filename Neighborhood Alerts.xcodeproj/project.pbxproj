@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0002609324B26CA000280B90 /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0002609224B26CA000280B90 /* AlertTableViewCell.swift */; };
 		0005FB7724A952F90024811C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7624A952F90024811C /* ChangePasswordViewController.swift */; };
 		0005FB7924A95CE30024811C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */; };
 		0005FB7B24A961E10024811C /* ChangeAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0002609224B26CA000280B90 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
 		0005FB7624A952F90024811C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				0011E593249F10570048860C /* TabViewController.swift */,
 				0011E576249EDEB00048860C /* MapViewController.swift */,
 				0011E578249EDEB00048860C /* ListViewController.swift */,
+				0002609224B26CA000280B90 /* AlertTableViewCell.swift */,
 				0011E58F249F01A20048860C /* LoginViewController.swift */,
 				0011E597249FE5D20048860C /* CreateAccountViewController.swift */,
 				0011E591249F0FB30048860C /* SettingsViewController.swift */,
@@ -274,6 +277,7 @@
 				0011E573249EDEB00048860C /* AppDelegate.swift in Sources */,
 				0011E594249F10570048860C /* TabViewController.swift in Sources */,
 				0011E596249FE4EC0048860C /* Alert.swift in Sources */,
+				0002609324B26CA000280B90 /* AlertTableViewCell.swift in Sources */,
 				0005FB9D24ADBA260024811C /* CoreDataHandler.swift in Sources */,
 				0011E59D24A02B810048860C /* NotificationsPermissions.swift in Sources */,
 				0011E575249EDEB00048860C /* SceneDelegate.swift in Sources */,
