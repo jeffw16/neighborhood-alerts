@@ -37,7 +37,7 @@ class CoreDataHandler {
         return nsManagedObjects[0]
     }
     
-    static func fetchUserLocalData(email: String, context: inout NSManagedObjectContext) -> [String: Any?] {
+    /*static func fetchUserLocalData(email: String, context: inout NSManagedObjectContext, key: String) -> [String: Any?] {
         let fetchedResult = fetchUserLocalDataNSManagedObject(email, context: &context)
         
         guard let resultData = fetchedResult else {
@@ -47,30 +47,32 @@ class CoreDataHandler {
         let result = ["locationBasedAlerts": resultData.value(forKey: "locationBasedAlerts")]
         
         return result
-    }
+    }*/
     
     static func storeUserLocalData(email: String, context: inout NSManagedObjectContext, key: String, value: Any) {
-        print ("in storeuserlocaldata")
+        print ("trying to store key: \(key)")
         var nsManagedObject = CoreDataHandler.fetchUserLocalDataNSManagedObject(email, context: &context)
         
         if nsManagedObject == nil {
             // create a new object
+            print ("it was nil")
             nsManagedObject = NSEntityDescription.insertNewObject(forEntityName: userLocalDataName, into: context)
             nsManagedObject!.setValue(email, forKey: "emailAddress")
+            nsManagedObject!.setValue(value, forKey: key)
+                   
+            context.insert(nsManagedObject!)
         }
         else{
             print ("not nil")
+            nsManagedObject!.setValue(value, forKey: key)
         }
         
-        nsManagedObject!.setValue(value, forKey: key)
-        
-        context.delete(nsManagedObject!)
-        context.insert(nsManagedObject!)
+       
         
         do {
             try context.save()
         } catch {
-            print ("ah shit an error")
+            print ("ah sh*t an error")
             let nsError = error as NSError
             NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
         }

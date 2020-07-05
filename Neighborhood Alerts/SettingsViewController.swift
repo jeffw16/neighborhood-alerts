@@ -22,6 +22,9 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var alertsRadiusSegCtrl: UISegmentedControl!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    
+    let radii = [1, 2, 10, 25, 50]
+    
     override func viewDidLoad() {
         self.scrollView.delegate = self
     }
@@ -66,7 +69,6 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
                 
                 if let nsManagedObjects = fetchedResults {
                     if nsManagedObjects.count != 1 {
-                        print("Found \(nsManagedObjects.count) results")
                         for obj in nsManagedObjects {
                             context.delete(obj)
                         }
@@ -77,6 +79,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
                             NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
                         }
                     } else {
+
                         let nsManagedObject = nsManagedObjects[0]
                         
                         let locationBasedAlertsVal = nsManagedObject.value(forKey: "locationBasedAlerts")
@@ -130,56 +133,46 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    @IBAction func setAlertSource(_ sender: Any) {
-        print ("HERE1")
+    func setSettings(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         var context = appDelegate.persistentContainer.viewContext
         let user = Auth.auth().currentUser
         if let email = user?.email {
             CoreDataHandler.storeUserLocalData(email: email, context: &context, key: "locationBasedAlerts", value: alertsSourceSegCtrl.selectedSegmentIndex == 0)
             
-            let entity = NSEntityDescription.entity(forEntityName: "UserLocalData", in: context)!
+            CoreDataHandler.storeUserLocalData(email: email, context: &context, key: "alertsRadius", value: radii[alertsRadiusSegCtrl.selectedSegmentIndex])
+            
+            /*let entity = NSEntityDescription.entity(forEntityName: "UserLocalData", in: context)!
             let nsManagedObject = NSManagedObject(entity: entity, insertInto: context)
             nsManagedObject.setValue(email, forKey: "emailAddress")
             nsManagedObject.setValue(alertsSourceSegCtrl.selectedSegmentIndex == 0, forKey: "locationBasedAlerts")
+            nsManagedObject.setValue(alertsRadiusSegCtrl.selectedSegmentIndex, forKey: "alertsRadius")
             
 //            context.insert(nsManagedObject)
             
             do {
                 try context.save()
             } catch {
+                print ("error")
                 let nsError = error as NSError
                 NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+ 
+ 
             
             print("Set alert source to \(alertsSourceSegCtrl.selectedSegmentIndex)")
+ 
+            */
+            
+            
         }
+    }
+    @IBAction func setAlertSource(_ sender: Any) {
+        setSettings()
     }
     
     @IBAction func setAlertRadius(_ sender: Any) {
-        print ("HERE2")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                var context = appDelegate.persistentContainer.viewContext
-                let user = Auth.auth().currentUser
-                if let email = user?.email {
-                    CoreDataHandler.storeUserLocalData(email: email, context: &context, key: "alertsRadius", value: alertsRadiusSegCtrl.selectedSegmentIndex == 0)
-                    
-                    let entity = NSEntityDescription.entity(forEntityName: "UserLocalData", in: context)!
-                    let nsManagedObject = NSManagedObject(entity: entity, insertInto: context)
-                    nsManagedObject.setValue(email, forKey: "emailAddress")
-                    nsManagedObject.setValue(alertsRadiusSegCtrl.selectedSegmentIndex == 0, forKey: "alertsRadius")
-                    
-        //            context.insert(nsManagedObject)
-                    
-                    do {
-                        try context.save()
-                    } catch {
-                        let nsError = error as NSError
-                        NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
-                    }
-                    
-                    //print("Set alert radius to \(alertsRadiusSegCtrl.selectedSegmentIndex)")
-        }
+        setSettings()
     }
     
     
