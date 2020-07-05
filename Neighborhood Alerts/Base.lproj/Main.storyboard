@@ -693,19 +693,19 @@ email address associated with this account.</string>
                                                     <segue destination="gaM-sy-qRd" kind="show" id="tpl-za-Az2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWN-0n-Cmm">
-                                                <rect key="frame" x="181" y="613" width="52" height="30"/>
-                                                <state key="normal" title="Log out"/>
-                                                <connections>
-                                                    <action selector="logoutAction:" destination="RHN-SV-4ay" eventType="touchUpInside" id="Mlo-AA-Ffd"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send alerts through" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBu-qg-qBO">
                                                 <rect key="frame" x="22" y="126" width="222" height="29"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWN-0n-Cmm">
+                                                <rect key="frame" x="181" y="690" width="52" height="30"/>
+                                                <state key="normal" title="Log out"/>
+                                                <connections>
+                                                    <action selector="logoutAction:" destination="RHN-SV-4ay" eventType="touchUpInside" id="Mlo-AA-Ffd"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -718,12 +718,11 @@ email address associated with this account.</string>
                                             <constraint firstItem="7G4-Bq-5mH" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="399" id="CsV-fY-ehR"/>
                                             <constraint firstItem="gl1-Jp-AtX" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="508" id="FY4-C9-fHW"/>
                                             <constraint firstAttribute="height" constant="777" id="GzR-pL-edu"/>
+                                            <constraint firstItem="yWN-0n-Cmm" firstAttribute="centerX" secondItem="khb-rM-EgO" secondAttribute="centerX" id="H4X-cA-b6P"/>
                                             <constraint firstItem="URn-M8-Nsi" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="207" id="I3p-Cn-NAu"/>
-                                            <constraint firstItem="yWN-0n-Cmm" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="613" id="SgB-il-TyM"/>
                                             <constraint firstItem="nSK-NU-TAt" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="168" id="StX-Rp-rMA"/>
                                             <constraint firstItem="Rny-TF-rBe" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="77" id="Tua-Fj-7tl"/>
                                             <constraint firstItem="p2n-jN-79R" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="48" id="UlS-Jy-gdD"/>
-                                            <constraint firstItem="yWN-0n-Cmm" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="181" id="VL6-Zf-Jqp"/>
                                             <constraint firstItem="7G4-Bq-5mH" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="ZtQ-Xk-rah"/>
                                             <constraint firstItem="mJK-UV-gNX" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="91" id="aGB-mf-yi8"/>
                                             <constraint firstItem="Rny-TF-rBe" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21" id="aUf-kQ-y45"/>
@@ -744,6 +743,7 @@ email address associated with this account.</string>
                                             <constraint firstItem="Y8K-Wu-4JF" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21" id="wb7-eh-mlG"/>
                                             <constraint firstItem="fln-jm-bU5" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="540" id="xKi-tZ-Klh"/>
                                             <constraint firstItem="URn-M8-Nsi" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="z2p-Yv-LYo"/>
+                                            <constraint firstItem="yWN-0n-Cmm" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="690" id="ziH-Dg-gzo"/>
                                         </constraints>
                                     </view>
                                 </subviews>

@@ -15,20 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neighborhood Alerts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzf-v9-Ih8">
-                                <rect key="frame" x="51.5" y="634" width="311" height="39"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="© 2020 Make Neighborhoods Safe Again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-Hb-Qrb">
-                                <rect key="frame" x="51" y="756" width="314" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2020 Make Neighborhoods Safe Again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-Hb-Qrb">
+                                <rect key="frame" x="50" y="756" width="314" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neighborhood Alerts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzf-v9-Ih8">
+                                <rect key="frame" x="51.5" y="648" width="311" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="Whw-q1-hIM">
-                                <rect key="frame" x="19.5" y="176" width="375" height="375"/>
+                                <rect key="frame" x="19.5" y="184" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="AFR-lW-C9W"/>
                                     <constraint firstAttribute="width" constant="375" id="LMw-BR-Gmc"/>
@@ -39,12 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Whw-q1-hIM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="69Y-Mt-vdW"/>
-                            <constraint firstItem="Whw-q1-hIM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="132" id="Jsx-aX-a5I"/>
-                            <constraint firstItem="dcf-Hb-Qrb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QJc-Lt-eox"/>
-                            <constraint firstItem="Gzf-v9-Ih8" firstAttribute="top" secondItem="Whw-q1-hIM" secondAttribute="bottom" constant="83" id="Tz6-ea-6n0"/>
-                            <constraint firstItem="dcf-Hb-Qrb" firstAttribute="top" secondItem="Gzf-v9-Ih8" secondAttribute="bottom" constant="83" id="bAH-uW-aYD"/>
-                            <constraint firstItem="Gzf-v9-Ih8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jCB-uf-iD4"/>
+                            <constraint firstItem="dcf-Hb-Qrb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="16o-sI-Bv7"/>
+                            <constraint firstItem="Gzf-v9-Ih8" firstAttribute="top" secondItem="Whw-q1-hIM" secondAttribute="bottom" constant="89" id="4Fh-PF-JtO"/>
+                            <constraint firstItem="Whw-q1-hIM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fe1-0p-vzK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dcf-Hb-Qrb" secondAttribute="bottom" constant="85" id="GUO-rs-0VF"/>
+                            <constraint firstItem="dcf-Hb-Qrb" firstAttribute="top" secondItem="Gzf-v9-Ih8" secondAttribute="bottom" constant="69" id="Iyv-uy-GsU"/>
+                            <constraint firstItem="Gzf-v9-Ih8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ugo-KQ-Uw3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
