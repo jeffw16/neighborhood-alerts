@@ -648,6 +648,9 @@ email address associated with this account.</string>
                                                     <segment title="25 miles"/>
                                                     <segment title="50 miles"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="setAlertRadius:" destination="RHN-SV-4ay" eventType="valueChanged" id="Fll-Im-OW2"/>
+                                                </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrQ-5M-vkX">
                                                 <rect key="frame" x="20" y="471" width="243" height="29"/>
