@@ -27,10 +27,12 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var descriptionPlaceholder: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var alertDisplayNameField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         descriptionText.delegate = self
+        scrollView.keyboardDismissMode = .onDrag
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -125,6 +127,15 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
     // hide keyboard when pressing the screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        self.scrollView.endEditing(true)
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
     // MARK: - Segue unwinding
@@ -191,7 +202,8 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
                     "description": self.descriptionText.text!,
                     "displayName": alertDisplayName,
                     "location": location,
-                    "upvotes": 0
+                    "upvotes": 0,
+                    "resolved": false
                 ]
                 
                 // create a UUID for our new location
