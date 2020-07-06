@@ -116,6 +116,30 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
         (tabBarController as! TabViewController).darkMode()
     }
     
+    @IBAction func helpAlertsSource(_ sender: Any) {
+        let alertController = UIAlertController(
+            title: "See alerts from",
+            message: "In the alerts list, you can choose to see alerts from your device's current geographical location or the home address associated with your account. This setting only applies to the alerts list, not the alerts map.",
+            preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func helpAlertsRadius(_ sender: Any) {
+        let alertController = UIAlertController(
+            title: "See alerts within",
+            message: "Change the range of alerts you'd like to view. This setting only applies to the alerts list, not the alerts map.",
+            preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func setSettings() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         var context = appDelegate.persistentContainer.viewContext

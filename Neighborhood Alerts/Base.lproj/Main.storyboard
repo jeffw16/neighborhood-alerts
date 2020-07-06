@@ -773,7 +773,7 @@ email address associated with this account.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuw-Uv-y1M">
-                                                <rect key="frame" x="160" y="715" width="95" height="30"/>
+                                                <rect key="frame" x="159.5" y="715" width="95" height="30"/>
                                                 <state key="normal" title="Clear settings">
                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -781,17 +781,34 @@ email address associated with this account.</string>
                                                     <action selector="clearSettings:" destination="RHN-SV-4ay" eventType="touchUpInside" id="G0b-9n-e1e"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wET-GV-rUc">
+                                                <rect key="frame" x="206" y="297" width="22" height="22"/>
+                                                <state key="normal" image="info.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="helpAlertsSource:" destination="RHN-SV-4ay" eventType="touchUpInside" id="UBx-Fw-cgh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFN-Ap-L5s">
+                                                <rect key="frame" x="222" y="381" width="22" height="22"/>
+                                                <state key="normal" image="info.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="helpAlertsRadius:" destination="RHN-SV-4ay" eventType="touchUpInside" id="SEx-14-QZC"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="gl1-Jp-AtX" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="00Q-sa-044"/>
+                                            <constraint firstItem="jFN-Ap-L5s" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="381" id="3Eg-CP-g0t"/>
                                             <constraint firstItem="XOo-Z7-nJQ" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="3Ht-zL-HZ8"/>
                                             <constraint firstItem="dpP-Gn-i1K" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="292" id="6m0-oG-dIH"/>
                                             <constraint firstItem="TBu-qg-qBO" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="9TS-u5-GG2"/>
+                                            <constraint firstItem="jFN-Ap-L5s" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="222" id="9Y1-7L-CZu"/>
                                             <constraint firstAttribute="trailing" secondItem="wpL-Jw-v6T" secondAttribute="trailing" constant="21" id="9qK-TW-K7j"/>
                                             <constraint firstItem="gl1-Jp-AtX" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="508" id="FY4-C9-fHW"/>
                                             <constraint firstAttribute="height" constant="777" id="GzR-pL-edu"/>
                                             <constraint firstItem="yWN-0n-Cmm" firstAttribute="centerX" secondItem="khb-rM-EgO" secondAttribute="centerX" id="H4X-cA-b6P"/>
+                                            <constraint firstItem="wET-GV-rUc" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="297" id="L7m-Wd-kQ3"/>
                                             <constraint firstItem="lZw-0k-2Ga" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="609" id="Lh4-RJ-8N1"/>
                                             <constraint firstItem="qOq-i3-mPq" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="92" id="NGZ-nH-9ZO"/>
                                             <constraint firstItem="H7Y-VX-EIE" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="250" id="O4F-iy-ggf"/>
@@ -824,6 +841,7 @@ email address associated with this account.</string>
                                             <constraint firstItem="dpP-Gn-i1K" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="uwu-3S-JsE"/>
                                             <constraint firstItem="Y8K-Wu-4JF" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21" id="wb7-eh-mlG"/>
                                             <constraint firstItem="fln-jm-bU5" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="540" id="xKi-tZ-Klh"/>
+                                            <constraint firstItem="wET-GV-rUc" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="206" id="zAk-qy-wJb"/>
                                             <constraint firstItem="HF8-z1-Dgf" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="213" id="zsd-Qn-gWD"/>
                                         </constraints>
                                     </view>
@@ -1147,6 +1165,7 @@ receive alerts from.</string>
         <segue reference="jak-vi-Gbf"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="map.fill" catalog="system" width="128" height="113"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>

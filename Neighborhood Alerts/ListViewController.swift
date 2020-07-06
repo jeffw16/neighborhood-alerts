@@ -163,6 +163,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.alertTitle.text = alertsList[rowNum].displayName
         cell.alertDescription.text = alertsList[rowNum].description
+        cell.alertImage.image = UIImage(named: "appstore")
         
         if let alertImageUrl = alertsList[rowNum].image {
             // download the image
@@ -171,10 +172,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             imageRef.getData(maxSize: 30 * 1024 * 1024) {
                 (data, error) in
                 
+                cell.loadIcon.stopAnimating()
+                
                 if error == nil {
                     // got the image, set it
                     cell.alertImage.image = UIImage(data: data!)
-                    cell.loadIcon.stopAnimating()
                 } else {
                     print(error!)
                 }
