@@ -36,6 +36,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         // get user info
         let user = Auth.auth().currentUser
         // populate email address on settings VC
@@ -53,52 +54,59 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
                         self.homeAddressLabel!.text = data["homeAddress"] as? String
                     }
                 }
-                // retrieve user local data from Core Data
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                var context = appDelegate.persistentContainer.viewContext
-                
-                if CoreDataHandler.darkMode(context: &context) {
-//                    overrideUserInterfaceStyle = .dark
-                    darkModeSwitch.isOn = true
-                } else {
-//                    overrideUserInterfaceStyle = .light
-                    darkModeSwitch.isOn = false
-                }
-                
-                let pushNotifsVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "pushNotifs")
-                
-                if let val = pushNotifsVal {
-                    pushNotifsSwitch.isOn = val as! Bool
-                }
-                
-                let locationBasedAlertsVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "locationBasedAlerts")
-                
-                if let val = locationBasedAlertsVal as? Bool {
-                    alertsSourceSegCtrl.selectedSegmentIndex = val ? 0 : 1
-                }
-                
-                let alertsRadiusVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "alertsRadius")
-                
-                if let val = alertsRadiusVal as? Int {
-//                    alertsRadiusSegCtrl.selectedSegmentIndex = radiiToIndex[val] ?? 3
-                    
-                    switch val {
-                    case 1:
-                        alertsRadiusSegCtrl.selectedSegmentIndex = 0
-                    case 2:
-                        alertsRadiusSegCtrl.selectedSegmentIndex = 1
-                    case 10:
-                        alertsRadiusSegCtrl.selectedSegmentIndex = 2
-                    case 25:
-                        alertsRadiusSegCtrl.selectedSegmentIndex = 3
-                    case 50:
-                        alertsRadiusSegCtrl.selectedSegmentIndex = 4
-                    default:
-                        alertsRadiusSegCtrl.selectedSegmentIndex = 3
-                    }
-                }
             } else {
                 emailAddressLabel!.text = "Email address: Unknown"
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // get user info
+        let user = Auth.auth().currentUser
+        // populate email address on settings VC
+        if let email = user?.email {
+            // retrieve user local data from Core Data
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            var context = appDelegate.persistentContainer.viewContext
+            
+            if CoreDataHandler.darkMode(context: &context) {
+                darkModeSwitch.isOn = true
+            } else {
+                darkModeSwitch.isOn = false
+            }
+            
+            let pushNotifsVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "pushNotifs")
+            
+            if let val = pushNotifsVal {
+                pushNotifsSwitch.isOn = val as! Bool
+            }
+            
+            let locationBasedAlertsVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "locationBasedAlerts")
+            
+            if let val = locationBasedAlertsVal as? Bool {
+                alertsSourceSegCtrl.selectedSegmentIndex = val ? 0 : 1
+            }
+            
+            let alertsRadiusVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "alertsRadius")
+            
+            if let val = alertsRadiusVal as? Int {
+//                    alertsRadiusSegCtrl.selectedSegmentIndex = radiiToIndex[val] ?? 3
+                
+                switch val {
+                case 1:
+                    alertsRadiusSegCtrl.selectedSegmentIndex = 0
+                case 2:
+                    alertsRadiusSegCtrl.selectedSegmentIndex = 1
+                case 10:
+                    alertsRadiusSegCtrl.selectedSegmentIndex = 2
+                case 25:
+                    alertsRadiusSegCtrl.selectedSegmentIndex = 3
+                case 50:
+                    alertsRadiusSegCtrl.selectedSegmentIndex = 4
+                default:
+                    alertsRadiusSegCtrl.selectedSegmentIndex = 3
+                }
             }
         }
     }
@@ -124,19 +132,56 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
     }
     
     @IBAction func setPushNotifs(_ sender: Any) {
-        setSettings()
+//        setSettings()
     }
     
     @IBAction func setDarkMode(_ sender: Any) {
-        setSettings()
+//        setSettings()
     }
     
     @IBAction func setAlertSource(_ sender: Any) {
-        setSettings()
+//        setSettings()
     }
     
     @IBAction func setAlertRadius(_ sender: Any) {
+//        setSettings()
+    }
+    
+    @IBAction func saveSettings(_ sender: Any) {
         setSettings()
+        let alertController = UIAlertController(
+            title: "Settings saved",
+            message: "Your settings have been saved.",
+            preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func clearSettings(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var context = appDelegate.persistentContainer.viewContext
+        let user = Auth.auth().currentUser
+        if let email = user?.email {
+            let alertController = UIAlertController(
+                title: "Clear settings",
+                message: "Are you sure you want to reset your settings? This cannot be undone.",
+                preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(
+                title: "Clear settings",
+                style: .destructive,
+                handler: {
+                    _ in
+                    CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "", deleteAll: true)
+            }))
+            alertController.addAction(UIAlertAction(
+                title: "Never mind",
+                style: .cancel,
+                handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func logoutAction(_ sender: Any) {

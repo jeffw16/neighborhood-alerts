@@ -741,7 +741,7 @@ email address associated with this account.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWN-0n-Cmm">
-                                                <rect key="frame" x="181" y="690" width="52" height="30"/>
+                                                <rect key="frame" x="181" y="661" width="52" height="30"/>
                                                 <state key="normal" title="Log out"/>
                                                 <connections>
                                                     <action selector="logoutAction:" destination="RHN-SV-4ay" eventType="touchUpInside" id="Mlo-AA-Ffd"/>
@@ -765,6 +765,22 @@ email address associated with this account.</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZw-0k-2Ga">
+                                                <rect key="frame" x="190" y="609" width="34" height="30"/>
+                                                <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveSettings:" destination="RHN-SV-4ay" eventType="touchUpInside" id="N1A-Dc-Ueb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuw-Uv-y1M">
+                                                <rect key="frame" x="160" y="715" width="95" height="30"/>
+                                                <state key="normal" title="Clear settings">
+                                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearSettings:" destination="RHN-SV-4ay" eventType="touchUpInside" id="G0b-9n-e1e"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -776,12 +792,14 @@ email address associated with this account.</string>
                                             <constraint firstItem="gl1-Jp-AtX" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="508" id="FY4-C9-fHW"/>
                                             <constraint firstAttribute="height" constant="777" id="GzR-pL-edu"/>
                                             <constraint firstItem="yWN-0n-Cmm" firstAttribute="centerX" secondItem="khb-rM-EgO" secondAttribute="centerX" id="H4X-cA-b6P"/>
+                                            <constraint firstItem="lZw-0k-2Ga" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="609" id="Lh4-RJ-8N1"/>
                                             <constraint firstItem="qOq-i3-mPq" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="92" id="NGZ-nH-9ZO"/>
                                             <constraint firstItem="H7Y-VX-EIE" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="250" id="O4F-iy-ggf"/>
                                             <constraint firstItem="wpL-Jw-v6T" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="330" id="QSB-eB-jsl"/>
                                             <constraint firstItem="nSK-NU-TAt" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="168" id="StX-Rp-rMA"/>
                                             <constraint firstItem="Rny-TF-rBe" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="77" id="Tua-Fj-7tl"/>
                                             <constraint firstItem="p2n-jN-79R" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="48" id="UlS-Jy-gdD"/>
+                                            <constraint firstItem="yWN-0n-Cmm" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="661" id="Vic-3p-pLu"/>
                                             <constraint firstItem="yF4-4U-Iuf" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="375" id="ZGm-8o-eor"/>
                                             <constraint firstItem="7G4-Bq-5mH" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="ZtQ-Xk-rah"/>
                                             <constraint firstItem="Rny-TF-rBe" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21" id="aUf-kQ-y45"/>
@@ -791,19 +809,21 @@ email address associated with this account.</string>
                                             <constraint firstItem="p2n-jN-79R" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21.5" id="gkp-RD-gay"/>
                                             <constraint firstItem="wpL-Jw-v6T" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="hsZ-3J-Ny2"/>
                                             <constraint firstItem="qOq-i3-mPq" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="255" id="i9D-jy-Prg"/>
+                                            <constraint firstItem="lZw-0k-2Ga" firstAttribute="centerX" secondItem="khb-rM-EgO" secondAttribute="centerX" id="iME-NH-R82"/>
                                             <constraint firstItem="HF8-z1-Dgf" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="iZk-eG-96m"/>
                                             <constraint firstAttribute="trailing" secondItem="7G4-Bq-5mH" secondAttribute="trailing" constant="21" id="l57-GW-fBD"/>
                                             <constraint firstItem="HrQ-5M-vkX" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="mDF-c4-deB"/>
+                                            <constraint firstItem="yuw-Uv-y1M" firstAttribute="centerX" secondItem="khb-rM-EgO" secondAttribute="centerX" id="mSJ-x8-9iY"/>
                                             <constraint firstItem="Y8K-Wu-4JF" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="19" id="nsR-54-iHy"/>
                                             <constraint firstItem="H7Y-VX-EIE" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="oB1-MT-pNp"/>
                                             <constraint firstItem="fln-jm-bU5" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="20" id="ptB-mO-7a0"/>
+                                            <constraint firstItem="yuw-Uv-y1M" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="715" id="qzS-9T-aN9"/>
                                             <constraint firstItem="HrQ-5M-vkX" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="471" id="rA5-gM-TPt"/>
                                             <constraint firstItem="XOo-Z7-nJQ" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="163" id="sdg-Nb-YVa"/>
                                             <constraint firstItem="TBu-qg-qBO" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="126" id="tLD-OZ-35d"/>
                                             <constraint firstItem="dpP-Gn-i1K" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="22" id="uwu-3S-JsE"/>
                                             <constraint firstItem="Y8K-Wu-4JF" firstAttribute="leading" secondItem="khb-rM-EgO" secondAttribute="leading" constant="21" id="wb7-eh-mlG"/>
                                             <constraint firstItem="fln-jm-bU5" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="540" id="xKi-tZ-Klh"/>
-                                            <constraint firstItem="yWN-0n-Cmm" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="690" id="ziH-Dg-gzo"/>
                                             <constraint firstItem="HF8-z1-Dgf" firstAttribute="top" secondItem="khb-rM-EgO" secondAttribute="top" constant="213" id="zsd-Qn-gWD"/>
                                         </constraints>
                                     </view>

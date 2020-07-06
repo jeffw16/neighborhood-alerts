@@ -14,7 +14,7 @@ import CoreData
 let userLocalDataName: String = "UserLocalData"
 
 class CoreDataHandler {
-    fileprivate static func fetchUserLocalDataNSManagedObject(_ email: String, context: inout NSManagedObjectContext, deleteExtras: Bool) -> NSManagedObject? {
+    fileprivate static func fetchUserLocalDataNSManagedObject(_ email: String, context: inout NSManagedObjectContext, deleteExtras: Bool, deleteAll: Bool = false) -> NSManagedObject? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: userLocalDataName)
         
         var fetchedResults: [NSManagedObject]? = nil
@@ -31,8 +31,8 @@ class CoreDataHandler {
         
         guard let nsManagedObjects = fetchedResults else { return nil }
         
-        if nsManagedObjects.count != 1 {
-            if deleteExtras {
+        if nsManagedObjects.count != 1 || deleteAll {
+            if deleteExtras || deleteAll {
                 for obj in nsManagedObjects {
                     context.delete(obj)
                 }
@@ -49,8 +49,8 @@ class CoreDataHandler {
         return nsManagedObjects[0]
     }
     
-    static func fetchUserLocalData(email: String, context: inout NSManagedObjectContext, key: String) -> Any? {
-        let nsManagedObjectOptional = fetchUserLocalDataNSManagedObject(email, context: &context, deleteExtras: true)
+    static func fetchUserLocalData(email: String, context: inout NSManagedObjectContext, key: String, deleteAll: Bool = false) -> Any? {
+        let nsManagedObjectOptional = fetchUserLocalDataNSManagedObject(email, context: &context, deleteExtras: true, deleteAll: deleteAll)
         
         if let result = nsManagedObjectOptional {
             return result.value(forKey: key)

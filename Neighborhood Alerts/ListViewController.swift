@@ -19,6 +19,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var alertsList: [Alert] = []
     var selectedAlert: Alert?
+    var refreshCtrl = UIRefreshControl()
     
     let detailedAlertSegueIdentifier: String = "DetailedAlertSegueIdentifier"
     let alertCellIdentifier: String = "AlertCellIdentifier"
@@ -34,9 +35,18 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        refreshCtrl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshCtrl.addTarget(self, action: #selector(loadAlerts), for: .valueChanged)
+        tableView.addSubview(refreshCtrl)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadAlerts()
+    }
+    
+    @objc func loadAlerts() {
         let user = Auth.auth().currentUser
         guard let email = user?.email else { return }
         
@@ -64,6 +74,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.tableView.reloadData()
                 }
             }
+            self.refreshCtrl.endRefreshing()
         }
     }
     
