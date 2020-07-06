@@ -12,7 +12,7 @@ class CreateNewAlertViewController: UIViewController,UITableViewDataSource, UITa
 
     @IBOutlet weak var tableView: UITableView!
     
-    var categoriesList: [String] = ["COVID-19", "Fire", "Burglary", "Lost pet", "Found pet", "Wild animal sighting", "Inclement weather", "Noise", "Party", "Other"]
+    var categoriesList: [String] = ["Fire", "Burglary", "Lost pet", "Found pet", "Wild animal sighting", "Inclement weather", "Noise", "Party", "Other"]
     
     let newAlertSegueIdentifier: String = "NewAlertSegueIdentifier"
     
