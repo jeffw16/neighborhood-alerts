@@ -36,6 +36,17 @@ class ChangePasswordViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        // Dark mode
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var context = appDelegate.persistentContainer.viewContext
+        if CoreDataHandler.darkMode(context: &context) {
+            overrideUserInterfaceStyle = .dark
+        } else {
+            overrideUserInterfaceStyle = .light
+        }
+    }
+    
     @IBAction func changePassword(_ sender: Any) {
         Auth.auth().confirmPasswordReset(withCode: resetCodeField.text!, newPassword: newPasswordField.text!) {
             err in

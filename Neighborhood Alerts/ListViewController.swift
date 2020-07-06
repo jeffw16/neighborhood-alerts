@@ -36,7 +36,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         let user = Auth.auth().currentUser
         guard let email = user?.email else { return }
         
@@ -65,6 +65,13 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         }
+        
+        // Dark mode
+//        if CoreDataHandler.darkMode(context: &context) {
+//            overrideUserInterfaceStyle = .dark
+//        } else {
+//            overrideUserInterfaceStyle = .light
+//        }
     }
     
     // filter alerts based on the current location provided by Location Services

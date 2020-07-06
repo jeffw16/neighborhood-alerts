@@ -9,9 +9,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
-import CoreData
 
-class SettingsViewController: UIViewController, UIScrollViewDelegate {
+class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarControllerDelegate {
     
     let logoutSegueIdentifier: String = "LogoutSegueIdentifier"
     
@@ -25,9 +24,15 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     let radii = [1, 2, 10, 25, 50]
+    let radiiToIndex = [1: 0,
+                        2: 1,
+                        10: 2,
+                        25: 3,
+                        50: 4]
     
     override func viewDidLoad() {
         self.scrollView.delegate = self
+        (self.parent?.parent as! UITabBarController).delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,20 +57,31 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 var context = appDelegate.persistentContainer.viewContext
                 
+                if CoreDataHandler.darkMode(context: &context) {
+//                    overrideUserInterfaceStyle = .dark
+                    darkModeSwitch.isOn = true
+                } else {
+//                    overrideUserInterfaceStyle = .light
+                    darkModeSwitch.isOn = false
+                }
+                
+                let pushNotifsVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "pushNotifs")
+                
+                if let val = pushNotifsVal {
+                    pushNotifsSwitch.isOn = val as! Bool
+                }
+                
                 let locationBasedAlertsVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "locationBasedAlerts")
                 
                 if let val = locationBasedAlertsVal as? Bool {
-                    switch val {
-                    case true:
-                        alertsSourceSegCtrl.selectedSegmentIndex = 0
-                    case false:
-                        alertsSourceSegCtrl.selectedSegmentIndex = 1
-                    }
+                    alertsSourceSegCtrl.selectedSegmentIndex = val ? 0 : 1
                 }
                 
                 let alertsRadiusVal = CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "alertsRadius")
                 
                 if let val = alertsRadiusVal as? Int {
+//                    alertsRadiusSegCtrl.selectedSegmentIndex = radiiToIndex[val] ?? 3
+                    
                     switch val {
                     case 1:
                         alertsRadiusSegCtrl.selectedSegmentIndex = 0
@@ -85,6 +101,11 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
                 emailAddressLabel!.text = "Email address: Unknown"
             }
         }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        // run the dark mode check again when the tab bar is changed
+        (tabBarController as! TabViewController).darkMode()
     }
     
     func setSettings() {

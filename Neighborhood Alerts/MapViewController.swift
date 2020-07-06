@@ -34,7 +34,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
         requestNotificationAuthorization()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.selectedAlertLoc = nil
         
         checkLocationServices()
@@ -60,6 +60,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
                 self.mapView.addAnnotations(self.annotationsOnMap)
             }
         }
+        
+        // Dark mode
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var context = appDelegate.persistentContainer.viewContext
+        if CoreDataHandler.darkMode(context: &context) {
+            overrideUserInterfaceStyle = .dark
+        } else {
+           overrideUserInterfaceStyle = .light
+       }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -372,10 +372,10 @@ email address associated with this account.</string>
             </objects>
             <point key="canvasLocation" x="-2219" y="726"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabViewController" customModule="Neighbor_Alerts" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="foK-Z8-UuQ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -383,6 +383,7 @@ email address associated with this account.</string>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <outlet property="weakTabBar" destination="W28-zg-YXA" id="au5-0A-BN8"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="Jft-La-MNw" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="Bfe-Dq-lQz" kind="relationship" relationship="viewControllers" id="0xK-PG-Vgq"/>
@@ -396,7 +397,7 @@ email address associated with this account.</string>
         <!--List-->
         <scene sceneID="e3l-vV-QjK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jft-La-MNw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jft-La-MNw" customClass="ListNavViewController" customModule="Neighbor_Alerts" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="list.dash" catalog="system" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="o5Q-lk-Knd">
@@ -405,6 +406,8 @@ email address associated with this account.</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
+                        <outlet property="navBar" destination="o5Q-lk-Knd" id="1kC-tg-uO1"/>
+                        <outlet property="tabBar" destination="cPa-gy-q4n" id="zMI-pf-HdD"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="wiG-rR-nIL"/>
                     </connections>
                 </navigationController>
@@ -604,12 +607,15 @@ email address associated with this account.</string>
         <!--New Alert-->
         <scene sceneID="bL0-Aj-eXS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bfe-Dq-lQz" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bfe-Dq-lQz" customClass="NewAlertNavViewController" customModule="Neighbor_Alerts" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="New Alert" image="plus" catalog="system" id="xwK-1Z-lKI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xkl-1X-RMU">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -985,7 +991,7 @@ receive alerts from.</string>
         <!--Settings-->
         <scene sceneID="XvL-c5-Y1t">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wSU-wD-vTH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wSU-wD-vTH" customClass="SettingsNavViewController" customModule="Neighbor_Alerts" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="person.crop.circle.fill" catalog="system" id="qW1-qg-jD0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5o3-Ht-bbS">

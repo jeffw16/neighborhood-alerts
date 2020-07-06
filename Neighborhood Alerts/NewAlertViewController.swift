@@ -43,6 +43,15 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
         descriptionText.layer.borderColor = UIColor.lightGray.cgColor
         descriptionText.layer.borderWidth = 1.0
         descriptionText.layer.cornerRadius = 8
+        
+        // Dark mode
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        var context = appDelegate.persistentContainer.viewContext
+//        if CoreDataHandler.darkMode(context: &context) {
+//            overrideUserInterfaceStyle = .dark
+//        } else {
+//           overrideUserInterfaceStyle = .light
+//       }
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -211,10 +220,12 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
                 
                 // upload image, if it exists
                 if let image = self.imageView.image {
+                    // compress this image
+                    let compressedImage = image.jpegData(compressionQuality: 0.025)
                     // if this image exists, set the path
                     newAlertData["image"] = "\(uuid).png"
                     // let's upload this image
-                    if let uploadData = image.pngData() {
+                    if let uploadData = UIImage(data: compressedImage!)!.pngData() {
                         let storageRef = Storage.storage().reference().child("\(uuid).png")
                         storageRef.putData(uploadData, metadata: nil) {
                             (metadata, error) in

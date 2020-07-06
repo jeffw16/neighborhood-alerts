@@ -26,7 +26,16 @@ class CreateNewAlertViewController: UIViewController,UITableViewDataSource, UITa
         tableView.reloadData()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        // Dark mode
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        var context = appDelegate.persistentContainer.viewContext
+//        if CoreDataHandler.darkMode(context: &context) {
+//            overrideUserInterfaceStyle = .dark
+//        } else {
+//            overrideUserInterfaceStyle = .light
+//        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoriesList.count

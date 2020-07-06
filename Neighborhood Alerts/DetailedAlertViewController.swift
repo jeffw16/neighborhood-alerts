@@ -45,7 +45,6 @@ class DetailedAlertViewController: UIViewController {
     @IBOutlet weak var loadIcon: UIActivityIndicatorView!
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
         
         titleLabel.text = alertTitle ?? ""
@@ -72,6 +71,15 @@ class DetailedAlertViewController: UIViewController {
         } else {
             self.loadIcon.stopAnimating()
         }
+        
+//        // Dark mode
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        var context = appDelegate.persistentContainer.viewContext
+//        if CoreDataHandler.darkMode(context: &context) {
+//            overrideUserInterfaceStyle = .dark
+//        } else {
+//            overrideUserInterfaceStyle = .light
+//        }
     }
     
 

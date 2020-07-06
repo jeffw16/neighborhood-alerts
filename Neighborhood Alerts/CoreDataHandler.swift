@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import FirebaseAuth
 import CoreData
 
 let userLocalDataName: String = "UserLocalData"
@@ -78,6 +79,15 @@ class CoreDataHandler {
             let nsError = error as NSError
             NSLog("Unresolved error \(nsError), \(nsError.userInfo)")
         }
+    }
+    
+    static func darkMode(context: inout NSManagedObjectContext) -> Bool {
+        let user = Auth.auth().currentUser
+        guard let email = user?.email else { return false }
+        
+        let darkMode: Bool = (CoreDataHandler.fetchUserLocalData(email: email, context: &context, key: "darkMode") ?? false) as! Bool
+        
+        return darkMode
     }
 
 }

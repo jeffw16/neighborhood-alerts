@@ -37,6 +37,15 @@ class ChangeAddressViewController: UIViewController {
                 currentAddressLabel!.text = "Unknown - please log out, log back in, and try again."
             }
         }
+        
+//        // Dark mode
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        var context = appDelegate.persistentContainer.viewContext
+//        if CoreDataHandler.darkMode(context: &context) {
+//            overrideUserInterfaceStyle = .dark
+//        } else {
+//            overrideUserInterfaceStyle = .light
+//        }
     }
     
     @IBAction func changeAddress(_ sender: Any) {
