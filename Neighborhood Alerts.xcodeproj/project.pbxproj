@@ -10,7 +10,6 @@
 		0002609324B26CA000280B90 /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0002609224B26CA000280B90 /* AlertTableViewCell.swift */; };
 		0002609524B299B000280B90 /* ListNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0002609424B299B000280B90 /* ListNavViewController.swift */; };
 		0002609724B29C1D00280B90 /* NewAlertNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0002609624B29C1D00280B90 /* NewAlertNavViewController.swift */; };
-		0002609924B29C7900280B90 /* SettingsNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0002609824B29C7900280B90 /* SettingsNavViewController.swift */; };
 		0005FB7724A952F90024811C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7624A952F90024811C /* ChangePasswordViewController.swift */; };
 		0005FB7924A95CE30024811C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */; };
 		0005FB7B24A961E10024811C /* ChangeAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */; };
@@ -41,7 +40,6 @@
 		0002609224B26CA000280B90 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
 		0002609424B299B000280B90 /* ListNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNavViewController.swift; sourceTree = "<group>"; };
 		0002609624B29C1D00280B90 /* NewAlertNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertNavViewController.swift; sourceTree = "<group>"; };
-		0002609824B29C7900280B90 /* SettingsNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavViewController.swift; sourceTree = "<group>"; };
 		0005FB7624A952F90024811C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				0011E58F249F01A20048860C /* LoginViewController.swift */,
 				0011E597249FE5D20048860C /* CreateAccountViewController.swift */,
 				0011E591249F0FB30048860C /* SettingsViewController.swift */,
-				0002609824B29C7900280B90 /* SettingsNavViewController.swift */,
 				0005FB7624A952F90024811C /* ChangePasswordViewController.swift */,
 				0005FB7824A95CE30024811C /* ResetPasswordViewController.swift */,
 				0005FB7A24A961E10024811C /* ChangeAddressViewController.swift */,
@@ -287,7 +284,6 @@
 				0011E573249EDEB00048860C /* AppDelegate.swift in Sources */,
 				0011E594249F10570048860C /* TabViewController.swift in Sources */,
 				0002609724B29C1D00280B90 /* NewAlertNavViewController.swift in Sources */,
-				0002609924B29C7900280B90 /* SettingsNavViewController.swift in Sources */,
 				0011E596249FE4EC0048860C /* Alert.swift in Sources */,
 				0002609324B26CA000280B90 /* AlertTableViewCell.swift in Sources */,
 				0005FB9D24ADBA260024811C /* CoreDataHandler.swift in Sources */,
@@ -441,7 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Neighborhood Alerts/Neighborhood Alerts.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 3CX5BHYB2J;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -463,7 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Neighborhood Alerts/Neighborhood Alerts.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 3CX5BHYB2J;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;

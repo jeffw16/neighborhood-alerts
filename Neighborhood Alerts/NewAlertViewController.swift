@@ -43,15 +43,6 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
         descriptionText.layer.borderColor = UIColor.lightGray.cgColor
         descriptionText.layer.borderWidth = 1.0
         descriptionText.layer.cornerRadius = 8
-        
-        // Dark mode
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        var context = appDelegate.persistentContainer.viewContext
-//        if CoreDataHandler.darkMode(context: &context) {
-//            overrideUserInterfaceStyle = .dark
-//        } else {
-//           overrideUserInterfaceStyle = .light
-//       }
     }
     
     func textViewDidChange(_ textView: UITextView) {

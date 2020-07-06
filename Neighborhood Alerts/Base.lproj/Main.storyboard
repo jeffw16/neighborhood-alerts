@@ -991,7 +991,7 @@ receive alerts from.</string>
         <!--Settings-->
         <scene sceneID="XvL-c5-Y1t">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wSU-wD-vTH" customClass="SettingsNavViewController" customModule="Neighbor_Alerts" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wSU-wD-vTH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="person.crop.circle.fill" catalog="system" id="qW1-qg-jD0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5o3-Ht-bbS">

@@ -36,17 +36,6 @@ class ChangePasswordViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // Dark mode
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var context = appDelegate.persistentContainer.viewContext
-        if CoreDataHandler.darkMode(context: &context) {
-            overrideUserInterfaceStyle = .dark
-        } else {
-            overrideUserInterfaceStyle = .light
-        }
-    }
-    
     @IBAction func changePassword(_ sender: Any) {
         Auth.auth().confirmPasswordReset(withCode: resetCodeField.text!, newPassword: newPasswordField.text!) {
             err in
@@ -79,17 +68,4 @@ class ChangePasswordViewController: UIViewController {
             }
         }
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -71,15 +71,6 @@ class DetailedAlertViewController: UIViewController {
         } else {
             self.loadIcon.stopAnimating()
         }
-        
-//        // Dark mode
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        var context = appDelegate.persistentContainer.viewContext
-//        if CoreDataHandler.darkMode(context: &context) {
-//            overrideUserInterfaceStyle = .dark
-//        } else {
-//            overrideUserInterfaceStyle = .light
-//        }
     }
     
 

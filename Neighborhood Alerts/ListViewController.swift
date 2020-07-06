@@ -65,13 +65,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         }
-        
-        // Dark mode
-//        if CoreDataHandler.darkMode(context: &context) {
-//            overrideUserInterfaceStyle = .dark
-//        } else {
-//            overrideUserInterfaceStyle = .light
-//        }
     }
     
     // filter alerts based on the current location provided by Location Services
