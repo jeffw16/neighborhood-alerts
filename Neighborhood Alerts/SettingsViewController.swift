@@ -161,6 +161,15 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
     
     @IBAction func setDarkMode(_ sender: Any) {
 //        setSettings()
+        let alertController = UIAlertController(
+            title: "Dark mode",
+            message: "Changes take effect after you press save and leave the settings pane.",
+            preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func setAlertSource(_ sender: Any) {
