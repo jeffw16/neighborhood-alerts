@@ -212,12 +212,12 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
                 // upload image, if it exists
                 if let image = self.imageView.image {
                     // compress this image
-                    let compressedImage = image.jpegData(compressionQuality: 0.025)
+                    let compressedImage = image.jpegData(compressionQuality: 0.01)
                     // if this image exists, set the path
-                    newAlertData["image"] = "\(uuid).png"
+                    newAlertData["image"] = "\(uuid).jpg"
                     // let's upload this image
-                    if let uploadData = UIImage(data: compressedImage!)!.pngData() {
-                        let storageRef = Storage.storage().reference().child("\(uuid).png")
+                    if let uploadData = compressedImage {
+                        let storageRef = Storage.storage().reference().child("\(uuid).jpg")
                         storageRef.putData(uploadData, metadata: nil) {
                             (metadata, error) in
                             // honestly, not much to do
