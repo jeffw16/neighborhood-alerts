@@ -19,6 +19,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // check if already logged in
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in.
+                self.performSegue(withIdentifier: self.loginSegueIdentifier, sender: self)
+            }
+        }
         // set up text field delegates to allow for pressing return
         // to jump to the next text field, as appropriate!
         emailAddressField.delegate = self
