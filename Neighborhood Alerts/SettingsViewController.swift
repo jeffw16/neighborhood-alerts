@@ -175,7 +175,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
         setSettings()
         let alertController = UIAlertController(
             title: "Settings saved",
-            message: "Your settings have been saved.",
+            message: "Your settings have been saved. Changes will be effective when you leave the settings pane.",
             preferredStyle: .alert)
         alertController.addAction(UIAlertAction(
             title: "OK",
