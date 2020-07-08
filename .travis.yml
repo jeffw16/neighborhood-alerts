@@ -1,7 +1,8 @@
 language: swift
 osx_image: xcode11.5
 cache:
-  - cocoapods
+  - cocoapods: true
+  - bundler: true
 xcode_workspace: Neighborhood Alerts.xcworkspace
 xcode_scheme: Neighborhood Alerts
 xcode_destination: platform=iOS Simulator,OS=13.5,name=iPhone 11 Pro Max
