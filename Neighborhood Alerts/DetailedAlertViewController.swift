@@ -82,6 +82,15 @@ class DetailedAlertViewController: UIViewController {
     @IBAction func fakeNewsButton(_ sender: Any) {
         alertUpvotes! -= 1
         updateUpvotes()
+        let alertController = UIAlertController(
+            title: "Fake News Alert",
+            message: "Thank you for letting the community know that this alert is false. Your input will be used to help automatically block fake alerts in the future.",
+            preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func markResolved(_ sender: Any) {

@@ -41,7 +41,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             if error != nil || Auth.auth().currentUser == nil {
                 // error creating an account
                 // show alert
-                print("Error: \(error ?? "no error message was provided for some reason????" as! Error)")
+                print("Error: \(error ?? "Something went wrong, we are working on it. Please come back later." as! Error)")
                 let alertController = UIAlertController(
                     title: "Account creation failed",
                     message: "There seems to be a problem with creating this account. Perhaps this email already exists or your password is shorter than 6 characters. Please try again.",
