@@ -613,7 +613,7 @@ email address associated with this account.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMq-xf-kaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="D7J-Hl-YyR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2357.971014492754" y="1069.4196428571429"/>
+            <point key="canvasLocation" x="2357" y="763"/>
         </scene>
         <!--New Alert-->
         <scene sceneID="bL0-Aj-eXS">
@@ -894,7 +894,7 @@ email address associated with this account.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnH-G7-7LB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652.1739130434785" y="1785.9375"/>
+            <point key="canvasLocation" x="2687" y="760"/>
         </scene>
         <!--Change password-->
         <scene sceneID="au9-Ni-VbE">

@@ -163,7 +163,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
 //        setSettings()
         let alertController = UIAlertController(
             title: "Dark mode",
-            message: "Changes take effect after you press save and leave the settings pane.",
+            message: "Please press the Save button and leave the Settings page to see changes.",
             preferredStyle: .alert)
         alertController.addAction(UIAlertAction(
             title: "OK",
@@ -184,7 +184,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
         setSettings()
         let alertController = UIAlertController(
             title: "Settings saved",
-            message: "Your settings have been saved. Changes will be effective when you leave the settings pane.",
+            message: "Your settings have been saved. Please leave the Settings page to see any changes.",
             preferredStyle: .alert)
         alertController.addAction(UIAlertAction(
             title: "OK",

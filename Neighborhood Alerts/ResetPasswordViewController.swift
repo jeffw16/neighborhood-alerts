@@ -39,7 +39,7 @@ class ResetPasswordViewController: UIViewController {
                 // successful reset
                 let alertController = UIAlertController(
                     title: "Password reset initiated",
-                    message: "A password reset link has been sent to the email address specified. Please follow the instructions sent in the email to proceed.",
+                    message: "A password reset link will be sent to the email address specified once you click the Change Password button. Please follow the instructions sent in the email to proceed.",
                     preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(
                     title: "OK",
