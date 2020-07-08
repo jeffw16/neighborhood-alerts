@@ -1,0 +1,6 @@
+language: swift
+osx_image: xcode11.5
+xcode_project: Neighborhood Alerts.xcodeproj # path to your xcodeproj folder
+xcode_scheme: Neighborhood Alerts
+xcode_destination: platform=iOS Simulator,OS=13.5,name=iPhone 11 Pro Max
+#script: xcodebuild -workspace "Neighborhood Alerts.xcworkspace" -scheme "Neighborhood Alerts" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
