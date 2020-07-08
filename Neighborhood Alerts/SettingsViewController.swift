@@ -200,7 +200,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
         if let email = user?.email {
             let alertController = UIAlertController(
                 title: "Clear settings",
-                message: "Are you sure you want to reset your settings? This cannot be undone.",
+                message: "Are you sure you want to reset your settings? This cannot be undone. Changes take full effect after closing and reopening the app.",
                 preferredStyle: .alert)
             alertController.addAction(UIAlertAction(
                 title: "Clear settings",
