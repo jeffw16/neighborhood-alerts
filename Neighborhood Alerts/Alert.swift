@@ -54,7 +54,7 @@ class Alert {
         let filteredRef = alertsRef
             .whereField("resolved", isEqualTo: false)
             .order(by: "created", descending: true)
-            .limit(to: 10)
+//            .limit(to: 25)
         
         filteredRef.getDocuments() { (querySnapshot, err) in
             if let err = err {
