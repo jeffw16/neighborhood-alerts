@@ -9,6 +9,19 @@
 			<key>orderHint</key>
 			<integer>24</integer>
 		</dict>
+		<key>NeighborhoodAlertsTravisCI.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0011E56E249EDEB00048860C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
