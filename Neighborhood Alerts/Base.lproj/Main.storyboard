@@ -521,8 +521,20 @@ email address associated with this account.</string>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-W8-zzN">
-                                                <rect key="frame" x="69" y="318" width="278" height="30"/>
-                                                <state key="normal" title="Publish alert"/>
+                                                <rect key="frame" x="147" y="318" width="122" height="30"/>
+                                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="122" id="pM3-Dn-n4M"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Publish alert">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="publishAlert:" destination="9EJ-Yd-kBt" eventType="touchUpInside" id="Syd-Md-7mN"/>
                                                 </connections>
@@ -540,12 +552,11 @@ email address associated with this account.</string>
                                             <constraint firstItem="aYb-5u-rf5" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="3WE-gX-Dpo"/>
                                             <constraint firstAttribute="trailing" secondItem="gfp-2R-Hm0" secondAttribute="trailing" constant="69" id="5EZ-jQ-Gwb"/>
                                             <constraint firstItem="m6n-56-WEC" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="8" id="AwM-GR-60c"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Rh-W8-zzN" secondAttribute="trailing" constant="69" id="DN6-Sb-XlI"/>
+                                            <constraint firstItem="1Rh-W8-zzN" firstAttribute="centerX" secondItem="jB7-Nk-EGX" secondAttribute="centerX" id="BuE-h4-qhq"/>
                                             <constraint firstItem="gfp-2R-Hm0" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="E2J-pN-D9P"/>
                                             <constraint firstAttribute="trailing" secondItem="aYb-5u-rf5" secondAttribute="trailing" constant="69" id="QiF-EM-Lep"/>
                                             <constraint firstItem="m6n-56-WEC" firstAttribute="top" secondItem="C5i-Rm-LqW" secondAttribute="bottom" constant="378" id="Xil-Kb-28B"/>
                                             <constraint firstItem="Cy9-wa-iN1" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="27" id="Xnb-bA-dzz"/>
-                                            <constraint firstItem="1Rh-W8-zzN" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="cxR-5I-OXn"/>
                                             <constraint firstItem="p7a-Pn-oAR" firstAttribute="leading" secondItem="jB7-Nk-EGX" secondAttribute="leading" constant="69" id="dEh-FK-Qbm"/>
                                             <constraint firstAttribute="trailing" secondItem="WkP-vC-vQb" secondAttribute="trailing" constant="21" id="dTa-0Q-KFf"/>
                                             <constraint firstItem="Cy9-wa-iN1" firstAttribute="top" secondItem="jB7-Nk-EGX" secondAttribute="top" constant="197" id="eTV-aa-mTP"/>
