@@ -30,11 +30,22 @@
 		0011E598249FE5D20048860C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E597249FE5D20048860C /* CreateAccountViewController.swift */; };
 		0011E59D24A02B810048860C /* NotificationsPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011E59C24A02B810048860C /* NotificationsPermissions.swift */; };
 		0011E59F24A02CF50048860C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0011E59E24A02CF50048860C /* GoogleService-Info.plist */; };
+		0079931D24B6808500A24FBC /* NeighborhoodAlerts_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079931C24B6808500A24FBC /* NeighborhoodAlerts_UITests.swift */; };
 		1008429B249FBA0200E0EC0D /* DetailedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1008429A249FBA0200E0EC0D /* DetailedAlertViewController.swift */; };
 		105CDE25249FFFA100E7917A /* NewAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CDE24249FFFA100E7917A /* NewAlertViewController.swift */; };
 		105CDE2724A0017100E7917A /* CreateNewAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CDE2624A0017100E7917A /* CreateNewAlertViewController.swift */; };
 		DF0B268DEC6F28A0C6016C3F /* Pods_Neighborhood_Alerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE829E4DFEA0C7FDF3C14FB /* Pods_Neighborhood_Alerts.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0079931F24B6808500A24FBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0011E567249EDEB00048860C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0011E56E249EDEB00048860C;
+			remoteInfo = "Neighborhood Alerts";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0002609224B26CA000280B90 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
@@ -63,6 +74,9 @@
 		0011E59924A02A8C0048860C /* Neighborhood Alerts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Neighborhood Alerts.entitlements"; sourceTree = "<group>"; };
 		0011E59C24A02B810048860C /* NotificationsPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPermissions.swift; sourceTree = "<group>"; };
 		0011E59E24A02CF50048860C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0079931A24B6808500A24FBC /* NeighborhoodAlerts UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NeighborhoodAlerts UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0079931C24B6808500A24FBC /* NeighborhoodAlerts_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborhoodAlerts_UITests.swift; sourceTree = "<group>"; };
+		0079931E24B6808500A24FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C158DA4FF9F0D78A9F20E3C /* Pods-Neighborhood Alerts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighborhood Alerts.release.xcconfig"; path = "Target Support Files/Pods-Neighborhood Alerts/Pods-Neighborhood Alerts.release.xcconfig"; sourceTree = "<group>"; };
 		1008429A249FBA0200E0EC0D /* DetailedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedAlertViewController.swift; sourceTree = "<group>"; };
 		105CDE24249FFFA100E7917A /* NewAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +94,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0079931724B6808500A24FBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				0011E571249EDEB00048860C /* Neighborhood Alerts */,
+				0079931B24B6808500A24FBC /* NeighborhoodAlerts UITests */,
 				0011E570249EDEB00048860C /* Products */,
 				74FC2151178BAF1E3CA204D6 /* Pods */,
 				A267355542F917A09F82CF8B /* Frameworks */,
@@ -97,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				0011E56F249EDEB00048860C /* Neighbor Alerts.app */,
+				0079931A24B6808500A24FBC /* NeighborhoodAlerts UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +157,15 @@
 				0011E59C24A02B810048860C /* NotificationsPermissions.swift */,
 			);
 			path = "Neighborhood Alerts";
+			sourceTree = "<group>";
+		};
+		0079931B24B6808500A24FBC /* NeighborhoodAlerts UITests */ = {
+			isa = PBXGroup;
+			children = (
+				0079931C24B6808500A24FBC /* NeighborhoodAlerts_UITests.swift */,
+				0079931E24B6808500A24FBC /* Info.plist */,
+			);
+			path = "NeighborhoodAlerts UITests";
 			sourceTree = "<group>";
 		};
 		74FC2151178BAF1E3CA204D6 /* Pods */ = {
@@ -175,6 +207,24 @@
 			productReference = 0011E56F249EDEB00048860C /* Neighbor Alerts.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0079931924B6808500A24FBC /* NeighborhoodAlerts UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0079932324B6808500A24FBC /* Build configuration list for PBXNativeTarget "NeighborhoodAlerts UITests" */;
+			buildPhases = (
+				0079931624B6808500A24FBC /* Sources */,
+				0079931724B6808500A24FBC /* Frameworks */,
+				0079931824B6808500A24FBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0079932024B6808500A24FBC /* PBXTargetDependency */,
+			);
+			name = "NeighborhoodAlerts UITests";
+			productName = "NeighborhoodAlerts UITests";
+			productReference = 0079931A24B6808500A24FBC /* NeighborhoodAlerts UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,6 +237,10 @@
 				TargetAttributes = {
 					0011E56E249EDEB00048860C = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					0079931924B6808500A24FBC = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 0011E56E249EDEB00048860C;
 					};
 				};
 			};
@@ -204,6 +258,7 @@
 			projectRoot = "";
 			targets = (
 				0011E56E249EDEB00048860C /* Neighborhood Alerts */,
+				0079931924B6808500A24FBC /* NeighborhoodAlerts UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -217,6 +272,13 @@
 				0011E59F24A02CF50048860C /* GoogleService-Info.plist in Resources */,
 				0011E581249EDEB20048860C /* Assets.xcassets in Resources */,
 				0011E57C249EDEB00048860C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0079931824B6808500A24FBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +356,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0079931624B6808500A24FBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0079931D24B6808500A24FBC /* NeighborhoodAlerts_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0079932024B6808500A24FBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0011E56E249EDEB00048860C /* Neighborhood Alerts */;
+			targetProxy = 0079931F24B6808500A24FBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0011E57A249EDEB00048860C /* Main.storyboard */ = {
@@ -439,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 3CX5BHYB2J;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -461,6 +540,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 3CX5BHYB2J;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Neighborhood Alerts/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,6 +551,44 @@
 				PRODUCT_NAME = "Neighbor Alerts";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0079932124B6808500A24FBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CX5BHYB2J;
+				INFOPLIST_FILE = "NeighborhoodAlerts UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mywikis.NeighborhoodAlerts-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Neighborhood Alerts";
+			};
+			name = Debug;
+		};
+		0079932224B6808500A24FBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CX5BHYB2J;
+				INFOPLIST_FILE = "NeighborhoodAlerts UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mywikis.NeighborhoodAlerts-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Neighborhood Alerts";
 			};
 			name = Release;
 		};
@@ -491,6 +609,15 @@
 			buildConfigurations = (
 				0011E589249EDEB20048860C /* Debug */,
 				0011E58A249EDEB20048860C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0079932324B6808500A24FBC /* Build configuration list for PBXNativeTarget "NeighborhoodAlerts UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0079932124B6808500A24FBC /* Debug */,
+				0079932224B6808500A24FBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
