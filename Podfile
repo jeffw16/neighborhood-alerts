@@ -16,5 +16,7 @@ target 'Neighborhood Alerts' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'LocationPickerViewController', :git => 'https://github.com/jeffw16/LocationPicker.git', :branch => 'master'
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'Firebase/Analytics'
 
 end

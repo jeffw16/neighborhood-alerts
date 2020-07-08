@@ -1061,7 +1061,7 @@ receive alerts from.</string>
             <objects>
                 <viewController id="swH-ZN-HfZ" customClass="DetailedAlertViewController" customModule="Neighbor_Alerts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sfu-dN-Bkc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgc-ln-A6A">
@@ -1172,7 +1172,7 @@ receive alerts from.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0gY-iJ-9Kk"/>
+        <segue reference="pca-fT-dKh"/>
         <segue reference="jak-vi-Gbf"/>
     </inferredMetricsTieBreakers>
     <resources>

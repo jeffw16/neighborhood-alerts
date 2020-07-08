@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-6546362164503137~2403549987</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -23,13 +25,13 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Neighborhood Alerts needs to access your camera in order for you to share photos of alerts.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Neighborhood Alerts needs to use your location to provide you with geographically relevant alerts and to know where you're sharing alerts from.</string>
+	<string>Neighborhood Alerts needs to use your location to provide you with geographically relevant alerts and to know where you&apos;re sharing alerts from.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Neighborhood Alerts needs to use your location to provide you with geographically relevant alerts and to know where you're sharing alerts from.</string>
+	<string>Neighborhood Alerts needs to use your location to provide you with geographically relevant alerts and to know where you&apos;re sharing alerts from.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Neighborhood Alerts needs to use your location to provide you with geographically relevant alerts and to know where you're sharing alerts from.</string>
+	<string>Neighborhood Alerts needs to use your location to provide you with geographically relevant alerts and to know where you&apos;re sharing alerts from.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Neighborhood Alerts needs to use your location to provide you with geographically relevant alerts and to know where you're sharing alerts from.</string>
+	<string>Neighborhood Alerts needs to use your location to provide you with geographically relevant alerts and to know where you&apos;re sharing alerts from.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Neighborhood Alerts needs to access your photos in order for you to add pertinent photos to your alerts.</string>
 	<key>UIApplicationSceneManifest</key>

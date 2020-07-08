@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import FirebaseFirestore
+import GoogleMobileAds
 
 class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelegate, ResolveAlertDelegate {
     
@@ -28,6 +29,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        bannerAd = GADBannerView(adSize: kGADAdSizeBanner)
+        // test ad ID
+//        bannerAd.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        // actual ad ID
+//        bannerAd.adUnitID = "ca-app-pub-6546362164503137/2086380438"
+//        bannerAd.rootViewController = self
+//        bannerAd.load(GADRequest())
         
         mapView.delegate = self
         
