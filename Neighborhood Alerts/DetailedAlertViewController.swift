@@ -59,12 +59,12 @@ class DetailedAlertViewController: UIViewController {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             var context = appDelegate.persistentContainer.viewContext
             
-            let cachedImageDataOpt:Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl!, context: &context, deleteAll: false) as? Data
+            let cachedImageDataOpt: Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl!, context: &context, deleteAll: false) as? Data
             
             if let cachedImageData = cachedImageDataOpt {
+                self.loadIcon.stopAnimating()
                 self.imageView.image = UIImage(data: cachedImageData)
-            }
-            else {
+            } else {
                 let imageRef = Storage.storage().reference().child(alertImageUrl!)
                 
                 imageRef.getData(maxSize: 30 * 1024 * 1024) {
