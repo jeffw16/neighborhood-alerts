@@ -613,7 +613,7 @@ email address associated with this account.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMq-xf-kaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="D7J-Hl-YyR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2357" y="763"/>
+            <point key="canvasLocation" x="2430" y="1104"/>
         </scene>
         <!--New Alert-->
         <scene sceneID="bL0-Aj-eXS">
@@ -894,7 +894,7 @@ email address associated with this account.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnH-G7-7LB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2687" y="760"/>
+            <point key="canvasLocation" x="1657" y="1820"/>
         </scene>
         <!--Change password-->
         <scene sceneID="au9-Ni-VbE">
@@ -967,7 +967,7 @@ and your new desired password below.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sb3-7o-Yo5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Gdo-5x-r6k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2355.072463768116" y="1786.6071428571427"/>
+            <point key="canvasLocation" x="2432" y="1786"/>
         </scene>
         <!--Change address-->
         <scene sceneID="baK-Cn-oK8">
@@ -1035,7 +1035,7 @@ receive alerts from.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lW4-pS-ITp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="rp1-Nf-ukG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2349.275362318841" y="2460.9375"/>
+            <point key="canvasLocation" x="1655" y="2595"/>
         </scene>
         <!--Settings-->
         <scene sceneID="XvL-c5-Y1t">
@@ -1148,7 +1148,7 @@ receive alerts from.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiK-27-lxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366.666666666667" y="359.59821428571428"/>
+            <point key="canvasLocation" x="2433" y="360"/>
         </scene>
         <!--Pick location-->
         <scene sceneID="I6E-oa-4nD">
@@ -1168,7 +1168,7 @@ receive alerts from.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="db1-ce-oDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="NQp-xm-b18" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3090" y="361"/>
+            <point key="canvasLocation" x="3200" y="360"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
