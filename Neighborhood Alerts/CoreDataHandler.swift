@@ -16,6 +16,7 @@ let userLocalDataName: String = "UserLocalData"
 let cachedImageName: String = "CachedImage"
 
 class CoreDataHandler {
+    // MARK: - User local data handler functions
     fileprivate static func fetchUserLocalDataNSManagedObject(_ email: String, context: inout NSManagedObjectContext, deleteExtras: Bool, deleteAll: Bool = false) -> NSManagedObject? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: userLocalDataName)
         
@@ -83,7 +84,7 @@ class CoreDataHandler {
         }
     }
     
-    // dark mode Core Data
+    // MARK: - Dark mode setting
     
     static func darkMode(context: inout NSManagedObjectContext) -> Bool {
         let user = Auth.auth().currentUser
@@ -94,7 +95,7 @@ class CoreDataHandler {
         return darkMode
     }
 
-    // Image core data
+    // MARK: - Image cache
     
     fileprivate static func fetchCachedImageNSManagedObject(_ name: String, context: inout NSManagedObjectContext, deleteExtras: Bool, deleteAll: Bool = false) -> NSManagedObject? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: cachedImageName)

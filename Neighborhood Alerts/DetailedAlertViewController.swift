@@ -59,21 +59,25 @@ class DetailedAlertViewController: UIViewController {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             var context = appDelegate.persistentContainer.viewContext
             
+            // see if we can find the cached image
             let cachedImageDataOpt: Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl!, context: &context, deleteAll: false) as? Data
             
             if let cachedImageData = cachedImageDataOpt {
+                // stop the loading icon and grab image from cache
                 self.loadIcon.stopAnimating()
                 self.imageView.image = UIImage(data: cachedImageData)
             } else {
                 let imageRef = Storage.storage().reference().child(alertImageUrl!)
                 
-                imageRef.getData(maxSize: 30 * 1024 * 1024) {
+                imageRef.getData(maxSize: 10 * 1024 * 1024) {
                     (data, error) in
                     
                     if error == nil {
                         // got the image, set it
                         self.imageView.image = UIImage(data: data!)
+                        // stop the loading icon if we found it
                         self.loadIcon.stopAnimating()
+                        // store it in cache
                         CoreDataHandler.storeCachedImageData(name: self.alertImageUrl!, data: data!, context: &context)
                     } else {
                         print(error!)
@@ -84,36 +88,6 @@ class DetailedAlertViewController: UIViewController {
             self.loadIcon.stopAnimating()
         }
     }
-    
-    /*
-     if let alertImageUrl = alertsList[rowNum].image {
-     // if file exists, download the image
-     
-     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-     var context = appDelegate.persistentContainer.viewContext
-     
-     let cachedImageDataOpt:Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl, context: &context, deleteAll: false) as? Data
-     
-     if let cachedImageData = cachedImageDataOpt {
-         cell.alertImage.image = UIImage(data: cachedImageData)
-     }
-     else {
-         let imageRef = Storage.storage().reference().child(alertImageUrl)
-         
-         imageRef.getData(maxSize: 10 * 1024 * 1024) {
-             (data, error) in
-             
-             cell.loadIcon.stopAnimating()
-             
-             if error == nil {
-                 // got the image, set it
-                 cell.alertImage.image = UIImage(data: data!)
-                 CoreDataHandler.storeCachedImageData(name: alertImageUrl, data: data!, context: &context)
-             } else {
-                 print(error!)
-             }
-     */
-    
 
     @IBAction func thanksButton(_ sender: Any) {
         alertUpvotes! += 1
@@ -124,8 +98,8 @@ class DetailedAlertViewController: UIViewController {
         alertUpvotes! -= 1
         updateUpvotes()
         let alertController = UIAlertController(
-            title: "Fake News Alert",
-            message: "Thank you for letting the community know that this alert is false. Your input will be used to help automatically block fake alerts in the future.",
+            title: "Fake news",
+            message: "Thank you for letting the community know that this alert is false. We investigate alerts with deeply negative scores.",
             preferredStyle: .alert)
         alertController.addAction(UIAlertAction(
             title: "OK",
@@ -135,6 +109,7 @@ class DetailedAlertViewController: UIViewController {
     }
     
     @IBAction func markResolved(_ sender: Any) {
+        // go ahead and mark it resolved in the data source too
         (originVC as? ResolveAlertDelegate)?.resolveAlert()
         
         let db = Firestore.firestore()
@@ -155,6 +130,7 @@ class DetailedAlertViewController: UIViewController {
         updateUpvotesToDb()
     }
     
+    // updates upvotes in our local Alert objects
     func updateUpvotesLocally() {
         if let alertUpvotes = self.alertUpvotes {
             self.upvotesLabel.text = "\(alertUpvotes)"
@@ -162,6 +138,7 @@ class DetailedAlertViewController: UIViewController {
         }
     }
     
+    // update upvotes remotely in Firebase
     func updateUpvotesToDb() {
         let db = Firestore.firestore()
         

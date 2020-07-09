@@ -105,6 +105,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate, UITabBarCo
                 case 50:
                     alertsRadiusSegCtrl.selectedSegmentIndex = 4
                 default:
+                    // if the data stored is weird
                     alertsRadiusSegCtrl.selectedSegmentIndex = 3
                 }
             }

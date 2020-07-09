@@ -167,16 +167,15 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let alertImageUrl = alertsList[rowNum].image {
             // if file exists, download the image
-            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             var context = appDelegate.persistentContainer.viewContext
             
-            let cachedImageDataOpt:Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl, context: &context, deleteAll: false) as? Data
+            // if we have a cached image, grab it from Core Data instead
+            let cachedImageDataOpt: Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl, context: &context, deleteAll: false) as? Data
             
             if let cachedImageData = cachedImageDataOpt {
                 cell.alertImage.image = UIImage(data: cachedImageData)
-            }
-            else {
+            } else {
                 let imageRef = Storage.storage().reference().child(alertImageUrl)
                 
                 imageRef.getData(maxSize: 10 * 1024 * 1024) {
@@ -187,6 +186,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     if error == nil {
                         // got the image, set it
                         cell.alertImage.image = UIImage(data: data!)
+                        // store it in the cache
                         CoreDataHandler.storeCachedImageData(name: alertImageUrl, data: data!, context: &context)
                     } else {
                         print(error!)

@@ -37,9 +37,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
     override func viewWillAppear(_ animated: Bool) {
         self.selectedAlertLoc = nil
         
+        // check if location services is enabled
         checkLocationServices()
         
         if locationManager.location != nil {
+            // pinpoint where the map is centered around
             let region = MKCoordinateRegion(
                 center: locationManager.location!.coordinate,
                 latitudinalMeters: CLLocationDistance(exactly: zoomLevel)!,
@@ -47,7 +49,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
             mapView.setRegion(mapView.regionThatFits(region), animated: true)
             
             Alert.loadAlerts() { alertsToAdd in
-                // adding alerts
+                // adding alerts onto the map
                 for alert in alertsToAdd {
                     let locationObject = CLLocation(latitude: alert.latitude, longitude: alert.longitude)
                     
@@ -95,8 +97,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
         }
     }
     
+    // alert the user if location authorization isn't what we wanted
     func checkLocationAuthorization() {
-      switch CLLocationManager.authorizationStatus() {
+        switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
             mapView.showsUserLocation = true
         case .authorizedWhenInUse:
@@ -136,7 +139,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UpdateUpvoteDelega
         let identifier = annotation.id
         var view: MKMarkerAnnotationView
         
-
         if let dequeuedView = mapView.dequeueReusableAnnotationView(
             withIdentifier: identifier) as? MKMarkerAnnotationView {
             dequeuedView.annotation = annotation
