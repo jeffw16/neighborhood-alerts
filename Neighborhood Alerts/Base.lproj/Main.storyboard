@@ -324,7 +324,7 @@ email address associated with this account.</string>
                                     <action selector="createAccountAction:" destination="eHT-Zo-K54" eventType="touchUpInside" id="Ba7-nf-4mb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLt-si-KcG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Home address, City, State, ZIP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLt-si-KcG">
                                 <rect key="frame" x="60.5" y="404" width="293" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="w3f-mg-hkW"/>
@@ -1173,7 +1173,7 @@ receive alerts from.</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0gY-iJ-9Kk"/>
-        <segue reference="jak-vi-Gbf"/>
+        <segue reference="swP-Np-hf6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
