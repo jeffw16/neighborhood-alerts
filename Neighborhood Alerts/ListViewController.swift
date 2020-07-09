@@ -166,19 +166,31 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.alertImage.image = UIImage(named: "appstore")
         
         if let alertImageUrl = alertsList[rowNum].image {
-            // download the image
-            let imageRef = Storage.storage().reference().child(alertImageUrl)
+            // if file exists, download the image
             
-            imageRef.getData(maxSize: 10 * 1024 * 1024) {
-                (data, error) in
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            var context = appDelegate.persistentContainer.viewContext
+            
+            let cachedImageDataOpt:Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl, context: &context, deleteAll: false) as? Data
+            
+            if let cachedImageData = cachedImageDataOpt {
+                cell.alertImage.image = UIImage(data: cachedImageData)
+            }
+            else {
+                let imageRef = Storage.storage().reference().child(alertImageUrl)
                 
-                cell.loadIcon.stopAnimating()
-                
-                if error == nil {
-                    // got the image, set it
-                    cell.alertImage.image = UIImage(data: data!)
-                } else {
-                    print(error!)
+                imageRef.getData(maxSize: 10 * 1024 * 1024) {
+                    (data, error) in
+                    
+                    cell.loadIcon.stopAnimating()
+                    
+                    if error == nil {
+                        // got the image, set it
+                        cell.alertImage.image = UIImage(data: data!)
+                        CoreDataHandler.storeCachedImageData(name: alertImageUrl, data: data!, context: &context)
+                    } else {
+                        print(error!)
+                    }
                 }
             }
         } else {

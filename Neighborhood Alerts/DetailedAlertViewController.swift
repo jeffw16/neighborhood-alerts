@@ -55,23 +55,64 @@ class DetailedAlertViewController: UIViewController {
         
         if alertImageUrl != nil {
             // download the image
-            let imageRef = Storage.storage().reference().child(alertImageUrl!)
             
-            imageRef.getData(maxSize: 30 * 1024 * 1024) {
-                (data, error) in
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            var context = appDelegate.persistentContainer.viewContext
+            
+            let cachedImageDataOpt:Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl!, context: &context, deleteAll: false) as? Data
+            
+            if let cachedImageData = cachedImageDataOpt {
+                self.imageView.image = UIImage(data: cachedImageData)
+            }
+            else {
+                let imageRef = Storage.storage().reference().child(alertImageUrl!)
                 
-                if error == nil {
-                    // got the image, set it
-                    self.imageView.image = UIImage(data: data!)
-                    self.loadIcon.stopAnimating()
-                } else {
-                    print(error!)
+                imageRef.getData(maxSize: 30 * 1024 * 1024) {
+                    (data, error) in
+                    
+                    if error == nil {
+                        // got the image, set it
+                        self.imageView.image = UIImage(data: data!)
+                        self.loadIcon.stopAnimating()
+                        CoreDataHandler.storeCachedImageData(name: self.alertImageUrl!, data: data!, context: &context)
+                    } else {
+                        print(error!)
+                    }
                 }
             }
         } else {
             self.loadIcon.stopAnimating()
         }
     }
+    
+    /*
+     if let alertImageUrl = alertsList[rowNum].image {
+     // if file exists, download the image
+     
+     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+     var context = appDelegate.persistentContainer.viewContext
+     
+     let cachedImageDataOpt:Data? = CoreDataHandler.fetchCachedImageData(name: alertImageUrl, context: &context, deleteAll: false) as? Data
+     
+     if let cachedImageData = cachedImageDataOpt {
+         cell.alertImage.image = UIImage(data: cachedImageData)
+     }
+     else {
+         let imageRef = Storage.storage().reference().child(alertImageUrl)
+         
+         imageRef.getData(maxSize: 10 * 1024 * 1024) {
+             (data, error) in
+             
+             cell.loadIcon.stopAnimating()
+             
+             if error == nil {
+                 // got the image, set it
+                 cell.alertImage.image = UIImage(data: data!)
+                 CoreDataHandler.storeCachedImageData(name: alertImageUrl, data: data!, context: &context)
+             } else {
+                 print(error!)
+             }
+     */
     
 
     @IBAction func thanksButton(_ sender: Any) {

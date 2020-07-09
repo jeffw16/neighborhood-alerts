@@ -217,6 +217,12 @@ class NewAlertViewController: UIViewController, UINavigationControllerDelegate, 
                     newAlertData["image"] = "\(uuid).jpg"
                     // let's upload this image
                     if let uploadData = compressedImage {
+                        
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        var context = appDelegate.persistentContainer.viewContext
+                        
+                        CoreDataHandler.storeCachedImageData(name: newAlertData["image"] as! String, data: uploadData, context: &context)
+                        
                         let storageRef = Storage.storage().reference().child("\(uuid).jpg")
                         storageRef.putData(uploadData, metadata: nil) {
                             (metadata, error) in
