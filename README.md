@@ -1,7 +1,7 @@
 # neighborhood-alerts
 [![Build Status](https://travis-ci.com/jeffw16/neighborhood-alerts.svg?token=K8cPugKdgwZ3CAtTDsHu&branch=master)](https://travis-ci.com/jeffw16/neighborhood-alerts)
 
-Neighborhood Alerts is an app that delivers time-sensitive alerts to geographically relevant recipients.
+Neighborhood Alerts is an app that delivers time-sensitive alerts to geographically relevant recipients.  Published on the iOS App Store, download at: https://apps.apple.com/us/app/neighborhood-alerts/id1521202368
 
 ## Development
 
